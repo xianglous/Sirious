@@ -1,0 +1,10 @@
+1,Where is Berlin?
+1,Where is the capital of Germany?
+1,Where is some of Berlin's electric energy imported from?
+1,How many research universities are there in Berlin?
+1,When was the reunification in Berlin?
+2,Where is the captial of Romania?
+2,What treaties were signed in Bucharest?
+2,What happened to Bucharest since 2000?
+2,When was Bucharest occupied by the German forces?
+2,What is a major part of Bucharest's architecture?
