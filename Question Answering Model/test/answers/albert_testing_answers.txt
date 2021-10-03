@@ -1,22 +1,20 @@
 1: Where is Berlin?
-Answer: ' northeastern Germany,' with score 0.825923502445221
+Answer: 'northeastern Germany,' with score 0.825923502445221
 1: Where is the capital of Germany?
 Answer: 'Berlin' with score 0.8377512097358704
 1: Where is some of Berlin's electric energy imported from?
-Answer: ' nearby power plants in southern Brandenburg.As' with score 0.5494514107704163
+Answer: 'nearby power plants in southern Brandenburg.As' with score 0.5494514107704163
 1: How many research universities are there in Berlin?
-Answer: ' four' with score 0.8777444958686829
+Answer: 'four' with score 0.8777444958686829
 1: When was the reunification in Berlin?
-Answer: ' 1990,' with score 0.9418975114822388
+Answer: '1990,' with score 0.9418975114822388
 2: Where is the captial of Romania?
 Answer: 'Bucharest' with score 0.8218581080436707
 2: What treaties were signed in Bucharest?
-Answer: '
-The following treaties were signed in Bucharest:' with score 0.24529829621315002
+Answer: 'The following treaties were signed in Bucharest:' with score 0.24529829621315002
 2: What happened to Bucharest since 2000?
-Answer: ' the city has been continuously modernised.' with score 0.3578821122646332
+Answer: 'the city has been continuously modernised.' with score 0.3578821122646332
 2: When was Bucharest occupied by the German forces?
-Answer: '
-Between 6 December 1916 and November 1918,' with score 0.4894864857196808
+Answer: 'Between 6 December 1916 and November 1918,' with score 0.4894864857196808
 2: What is a major part of Bucharest's architecture?
-Answer: ' Calea Victoriei' with score 0.9325670599937439
+Answer: 'Calea Victoriei' with score 0.9325670599937439

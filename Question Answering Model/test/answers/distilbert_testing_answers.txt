@@ -1,0 +1,20 @@
+1: Where is Berlin?
+Answer: 'northeastern Germany' with score 0.7756868600845337
+1: Where is the capital of Germany?
+Answer: 'Berlin' with score 0.9210767149925232
+1: Where is some of Berlin's electric energy imported from?
+Answer: 'southern Brandenburg' with score 0.5413349270820618
+1: How many research universities are there in Berlin?
+Answer: 'four' with score 0.8041274547576904
+1: When was the reunification in Berlin?
+Answer: '1990' with score 0.9736570119857788
+2: Where is the captial of Romania?
+Answer: 'Bucharest' with score 0.3744259178638458
+2: What treaties were signed in Bucharest?
+Answer: 'Treaty of Bucharest' with score 0.4367503821849823
+2: What happened to Bucharest since 2000?
+Answer: 'the city has been continuously modernised' with score 0.40422534942626953
+2: When was Bucharest occupied by the German forces?
+Answer: '2001' with score 0.8102097511291504
+2: What is a major part of Bucharest's architecture?
+Answer: 'Centrul Civic' with score 0.9282330274581909
