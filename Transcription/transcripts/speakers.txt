@@ -1,0 +1,811 @@
+
+Speaker 3: no you don't need a reason Apple TV
+Speaker 2: all right
+Speaker 1: Apple TV sweet don't have to carry around a dongle welcome welcome everybody yeah it's um
+Speaker 2: the gloomy day I got a bunch of great emails
+Speaker 1: saying I can't make it
+Speaker 2: I feel it I feel it but anyway let's just jump right into how many
+Speaker 1: people have groups
+Speaker 2: awesome that's all you left the scene pretty much everybody so
+Speaker 1: we'll will tease out who made who may not have a group and reach out
+Speaker 2: to you so I didn't get an email from anyone you know that needs further assistance with getting their group sorted but Google what is a real good job everybody getting those submissions in its it's some of the easiest points you can get so
+Speaker 1: So today we're going to be talking about a couple things
+Speaker 2: right like so now you have groups okay
+Speaker 1: and remember this class the primary thing is about creating something awesome in a team
+Speaker 2: developing a solution to the prop to a
+Speaker 1: problem end-to-end being thoughtful about design being thoughtful about
+Speaker 2: implementation architecting the solution implementing the solution
+Speaker 1: and then delivering it I'm presenting about those Solution that's what this experience is from primarily
+Speaker 2: focused on and so
+Speaker 1: now with your groups in hand and perhaps some project ideas at the ready where can I where can I jump into that face so I want to talk a little bit about the to landscape and this is remember this is a very open-ended kind of Journey right
+Speaker 2: imagine
+Speaker 1: that your group is a little start-up or a little project team you do many large companies will create
+Speaker 2: these these
+Speaker 1: project teams to go often
+Speaker 2: innovate Innovation lab and so it's really it's
+Speaker 1: a journey that starts with understanding how you're going to approach
+Speaker 2: that
+Speaker 1: problem solution and what are the tools that you're going to bring
+Speaker 2: some beer on that so we'll
+Speaker 1: just talk about the to landscape and this is just a suggestion anything you find out there I'm interested to learn about what you're excited about
+Speaker 2: using a saddle so we'll have our
+Speaker 1: on Monday we'll have half the teams present the few slides of the idea and then get some real time reaction
+Speaker 2: and then on Wednesday we'll have a few flies from the
+Speaker 1: second batch of groups on the project ideas and reaction and they're due on
+Speaker 2: Friday so
+Speaker 1: that sucks coming up and we'll talk about that a good bit and then we're going to just jump in and pick up where we left off
+Speaker 2: last time now
+Speaker 1: I've gotten a couple interesting
+Speaker 2: emails thank you so much
+Speaker 1: like I can sense there's a little
+Speaker 2: like
+Speaker 1: a little nervousness about reading papers and you know what what this is a New Journey from many folks right at the idea of reading an academic research paper and that's coming coming soon and I wanted to emphasize by the way you know when I have
+Speaker 2: new graduate students PhD students that are joining the PHD program Bill
+Speaker 1: Bill asked me there's this expectation is this an eight expectation that you're supposed to be able to read a paper and understand
+Speaker 2: it and what all quickly tell him in this there's some you know
+Speaker 1: dissonance around that and what I'll tell him
+Speaker 2: is
+Speaker 1: dude you have to read a hundred research papers on till you can
+Speaker 2: feel like you can read research
+Speaker 1: papers right that's the journey actually grad school 50% of it is getting that
+Speaker 2: skill up right
+Speaker 1: so this is much of it's a journey of you'll have your first toe in the water and then you leave paper after paper and you're only going to get through maybe 10 papers in his class right and so you should get familiar with the what they look like how their design how they make their claims and it's not the expectation that you're not to be tested on what your understanding of the paper this is a journey
+Speaker 2: 2 get in there and understand and be able to talk and inhale the latest and greatest of what's going on and this is your first in roads so
+Speaker 1: this is definitely an effort based thing right
+Speaker 2: this is one of the be
+Speaker 1: on the Project's almost everything else in this class has an a for effort if you're engaged and you're trying you're succeeding because that's a journey of Discovery
+Speaker 2: and that's actually what
+Speaker 1: happens right a perseverance and I'm putting your energy into things that
+Speaker 2: matter things that are valuable so that's good right
+Speaker 1: are tools of the trade okay so what are we going to be doing these groups we have our group's not what are
+Speaker 2: we doing all right cool so I
+Speaker 1: talked a little bit about it but more practically we're going to be building something like
+Speaker 2: this right we're going to be using speech recognition in some cases and other cases
+Speaker 1: you won't need to a sorry you'll just say I want to do it's a pot
+Speaker 2: so it should be it'll be a text. That's up to you
+Speaker 1: for the problem that you so
+Speaker 2: choose to Endeavor
+Speaker 1: so you'll have to speak up and there's a swath of ways you can approach this and we'll talk about kind of like lean heavy on the
+Speaker 2: Moor you know the more kind of pulled up way
+Speaker 1: you can kind of go and do things from scratch and Tinker with models which a lot of folks I know are going
+Speaker 2: to want to do cuz that's what happened
+Speaker 1: or you can kind of stay inside a to system but see what Microsoft offers and what what Google offers and what what else out there to help me build this experience that I want to create in the world but you're going to be understanding what was said and then you're going to have some code responsible for
+Speaker 2: doing stuff processing that understanding
+Speaker 1: solving the problem on that
+Speaker 2: critical path so
+Speaker 1: primarily will be designing some of this stuff
+Speaker 3: don't
+Speaker 2: forget the of the state of the world today on this dream
+Speaker 1: Sr is a commoditized
+Speaker 2: solution in deed does not a ton of
+Speaker 1: changes that are happening to the fundamental way that the science doesn't
+Speaker 2: use on indeed Google did the last big I would say when I
+Speaker 1: we actually Quantified at
+Speaker 2: one point all of the speech-to-text systems in existence that we could find
+Speaker 1: and we found Google was actually
+Speaker 2: the best
+Speaker 1: and there's actually some papers out there that
+Speaker 2: describe what they do in production as of late and they
+Speaker 1: made the last Innovations there right there actually injecting noise in the date of
+Speaker 2: thought so if
+Speaker 1: I have date of each of you guys talkin I can take that data and I can superimpose
+Speaker 2: ambient bus noises ambient traffic noises and Vian I don't know if you're in the jungle you might hear some like lions roaring
+Speaker 1: our like whatever kind of
+Speaker 2: Ambia
+Speaker 1: so they were so that it can hear so this is pretty salt and what it looks like is when you use your iPhone or your or your Android phone there's standard
+Speaker 2: fdk stuff for Speed it's like you know how there's like your standard library for I don't know everything. Let it choose something or the
+Speaker 1: files we have standardized libraries for speech to
+Speaker 2: text in mobile devices and that spans both
+Speaker 1: devices really with your phones and so forth but also like you're at home devices in your browser there's a standardized every browser has a standardized toolkit
+Speaker 2: for speech-to-text if
+Speaker 1: you're in Chrome you can use their standard and you look at this like you can you can put a you can have a voice interface to any website because the browser support it as a
+Speaker 2: standard Chrome Heather Sanders Safari has their standard from using Google stop Safari. Interesting but its services and so forth to get it and I have to stay in commercial land flow and Amazon blacks at Microsoft Lewis no systems pretty
+Speaker 1: much work the same way under kind of terrible but they are actually very popular and you can actually mix and match tools one great model for mixing mastering tools is your business logic can take inputs
+Speaker 2: from say business logic just music your
+Speaker 1: application once it understands you and what your application and take input from your dialogflow are your Amazon Lex the common things you can go to Amazon to build conversation way Iowa I think it also take input from your own torch library
+Speaker 2: right
+Speaker 1: so you can run you can see the outputs from like dollar closing that's going to be useful to know what to do but let me look at some outputs from some bottles that I created to do other cool stuff so you can mix and match the engines you wanted it was fear software I'm not gives you a lot of flexibility to be creative and solve problems and this is going to be probably
+Speaker 2: pretty there's not a lot of fancy energy that happens because you don't want to use a lot of deep learning for an LG
+Speaker 1: Commercial Landscaping the tool sets out
+Speaker 3: there
+Speaker 2: you'll probably have
+Speaker 1: more algorithmic
+Speaker 2: ways to determine how to respond
+Speaker 1: this is kind of interesting research home base to write so they'll be a whole bunch of tools you may use for natural language understanding
+Speaker 2: and then text to speech is also this standardized thing that all those platforms do you know when you do text to speech on your iPhone it sounds like
+Speaker 1: Siri talking to you or
+Speaker 2: one of the variations of Siri there's like a British Siri that's a nail and then there's like an Australian Siri
+Speaker 1: so we're just going to look at some of these tools in this slide deck is actually a resource to you
+Speaker 2: actually see how you could
+Speaker 1: download this lie back and decide that cuz going to have like a little map to all the stuff we talked about today which will be a reference as you get on the Journey of thinking about your project but this is let me just emphasize this is a this is just to encourage
+Speaker 2: exploration
+Speaker 1: it's not by any means guidelines or a specification of what you should use
+Speaker 2: to keep that in mind this is just if
+Speaker 1: you want to get started on your Google Journey cuz that's how we solve problems today without a browser on search right
+Speaker 2: next to them
+Speaker 3: I
+Speaker 2: know I know I
+Speaker 1: just thought you used to have but not like seriously I just
+Speaker 2: don't code unless you know whatever
+Speaker 1: so yeah it's going to be going on that while Journey
+Speaker 2: this is a useful useful it's in the cloud so you can just send files to it or stream wav files to it and it'll give you tax back real time that's one good place to
+Speaker 1: look to see what's out there they also have a whole like you'll see all of these Cloud providers will have their
+Speaker 2: ml Suite of cloud apps and you can
+Speaker 1: get models train models use models and so we had a wonderful project 1 year or where
+Speaker 2: they were they were identifying
+Speaker 1: folks use that use computer vision to tell people's emotions while you talk to
+Speaker 2: it so you were talking to this AI it was doing and all you
+Speaker 1: and it was telling your emotions and it could tell your age and I can tell your gender I think until you're all kinds of stuff this model has like a Microsoft
+Speaker 2: Vision model that's out there and they'd hooked into that API so you'll find those
+Speaker 1: this is kind of Google's offerings Do you want to build a conversational AI system
+Speaker 2: they give you dialogflow which is the
+Speaker 1: EE from them for building chat
+Speaker 2: box or
+Speaker 1: virtual assistant API right you can plug things into it
+Speaker 2: it can interact with
+Speaker 1: whatever software tools and it's all kinds of great guys but this would be a great place to look at on that on that Journey so there's lots of documentation this weather looks like this is like last
+Speaker 2: year there's actually a new MX and CX Seahawks is like new one anyway so it
+Speaker 1: might be different but
+Speaker 2: there's lots of resources out there and then there's all
+Speaker 1: kinds of YouTube is awesome for this to there's all kinds of videos about how to get started with these
+Speaker 2: things so let me play this I think it's like a
+Speaker 3: minute why can't you deconstructing chatbots I'm Priyanka Ricotta and in this episode we will dissect the architectural to better understand the building
+Speaker 2: glass
+Speaker 1: five minutes when I get to watch the whole thing
+Speaker 2: but yeah
+Speaker 3: powered by natural language understanding to facilitate which and natural conversation look at a high-level architecture kind of clothes that's in the middle of the sky looking interface with all the common channels including website apps
+Speaker 2: for this is the stuff they give
+Speaker 1: you like nothing you can find infinity have all these multi-channel wherever they are coming from where you can plug it in here you'll find a lot of guidance on
+Speaker 2: your journey depending on what you choose to use
+Speaker 1: at all so you can always connect with me and tell if you wanted to map your project to
+Speaker 2: tools I'm happy to help and have a conversation about that
+Speaker 1: so there's a lot of resources there
+Speaker 2: on the apis this is what I was talking about
+Speaker 1: in their Cloud you can video
+Speaker 2: you know all kinds of
+Speaker 1: tools to get you up and running and tons of documentation a cool thing is they're getting started stuff they're simple
+Speaker 2: stuff
+Speaker 1: it's not a lot of cold right to get the basic
+Speaker 2: scaffolding up so that you could build your solution and we can walk through all of that on a guided tour
+Speaker 1: Enterprise might run into
+Speaker 2: hiccups
+Speaker 1: Amazon has their Computing stuff Amazon voice
+Speaker 2: that
+Speaker 1: sounds like this is another interesting problem how can you
+Speaker 2: sound as human as possible and there's many many solutions are
+Speaker 1: there you don't have to use that stuff you can use our
+Speaker 2: demo Union speech to text my brother your Java Script what's a its reactor angular or of you or any of those cast aspersions to Angela regulars fine to thank you Google
+Speaker 1: or somewhere which is running a
+Speaker 2: Java I mean alright okay cool I'll slow it down a little bit I got to remember
+Speaker 1: I'm 85 okay okay so you got your kind of generally if your group. It's all good. Just connect and then we'll talk about that Journey
+Speaker 2: but let's assume you
+Speaker 1: wanted to do a browser delivered
+Speaker 2: experience anything
+Speaker 1: are you use JavaScript
+Speaker 2: write and thank you just playing job script or
+Speaker 1: their deeds to their these two kids like we
+Speaker 2: act which is awesome and angular and
+Speaker 1: view the day after like the three
+Speaker 2: big ones
+Speaker 1: really interesting but right so you can use something on the front and the back then let's say you wanted to hook him you wanted to just grab yourself a burnt
+Speaker 2: model right and you
+Speaker 1: wanted to play with Burt you want burn to do something
+Speaker 2: interesting on in your project you
+Speaker 1: can get from tensorflow Hub
+Speaker 2: like the models out there papers with code all the code is out there so you
+Speaker 1: can grab a burke you can wrap it in a flask app and flasks
+Speaker 2: is a it's
+Speaker 1: like us very simple
+Speaker 2: library in in
+Speaker 1: Python it's like a it's a library for making a micro service so that you have something that's listening on a
+Speaker 2: port right
+Speaker 1: and so your website can connect to your localhost port
+Speaker 2: 8080 or whatever and then
+Speaker 1: port 8080 is your Python
+Speaker 2: program thank you flask import flask done right
+Speaker 1: there's like Fifty lines of code for like getting started
+Speaker 2: was super
+Speaker 1: super easy but we'll look at it together typically what I do and we'll get on a zoom call and then go look at
+Speaker 2: every step together if this is
+Speaker 1: something that the group really wants to do I'm going to introduce you to all this new stuff
+Speaker 2: that I
+Speaker 1: want to use and I'm like heck yeah that's awesome to see most excited about this project
+Speaker 2: is all fair game
+Speaker 1: with creating mobile
+Speaker 2: apps like
+Speaker 1: an IOS app on an Android
+Speaker 2: app okay good I'm your old.
+Speaker 1: Another opportunity you can also create something that runs on Alexa or runs on Google home Google home is actually very friendly
+Speaker 2: to customisation and
+Speaker 1: plugging into their API so you can actually set up your
+Speaker 2: flask
+Speaker 1: go to Bojangles higher learning curve
+Speaker 2: python thing running on a server that talks directly to your Google home in your house so you can be like hey I want to talk to my 498 right so the world's your oyster okay kind of
+Speaker 1: Library ecosystem for
+Speaker 2: conversational AI it's an interesting
+Speaker 1: entry in the market and they're doing some interesting stuff like a lot of big companies are up taking Raza
+Speaker 2: the Builder in-house conversational AI capabilities
+Speaker 1: if you wanted to look at the open-source
+Speaker 2: you know Linux for this stuff right what's the open-source ecosystem is it's all new to everyone before
+Speaker 1: I got this videos you can just watch this one hour video and then you go from Soup To Nuts
+Speaker 2: building a chatbot
+Speaker 1: the literally you can watch this
+Speaker 2: one hour video if you want to do and then just Build Your
+Speaker 1: solution using what you've learned from this one on video
+Speaker 2: videos you can use the slide offline to look at some of that stuff we've got there's this one does pandorabots there's all kinds of options out there if you wanted to look probably at the tools out there such a disappointment is crazy I don't know but they
+Speaker 1: had Bob Dylan
+Speaker 2: but then their solution is not
+Speaker 1: awesome but you can explore it right
+Speaker 2: for yourself so any questions on the tools or how to navigate that navigate to Logistics the tactics go ahead they cost money
+Speaker 1: so you can avoid tools that cost money and if there's a tool you want to use that cost money hit me
+Speaker 2: up I don't mind paying for it right don't worry you're good there but
+Speaker 1: is actually
+Speaker 2: free and the sdks in the browser all that stuff is free and open the
+Speaker 1: models almost every model I talk about this all the time with people almost every model you can find in like Google's AI Cloud ecosystem and like Amazon's Cloud
+Speaker 2: 9 ml to look at
+Speaker 1: making all the birds Roberta distill Bert Ernie
+Speaker 2: and
+Speaker 1: it's like obliterating birth performance and you can get all the code and you can grab that code put in your in your python it's like an import torch import
+Speaker 2: Transformers library and then just use
+Speaker 1: that model that I just downloaded and it's better than the stuff in the cloud so so there is no
+Speaker 2: requirement to use the paint stuff what do you get from the pizza I don't know
+Speaker 1: more documentation I
+Speaker 2: guess maybe a
+Speaker 1: customer service line you can call
+Speaker 3: it's like so
+Speaker 1: easy to do
+Speaker 2: groundbreaking products in this market
+Speaker 1: it's so easy if you understand what I'm going to beat you in this class but we are learning in
+Speaker 2: this class is going to send this stuff
+Speaker 1: you can go out there and gauge the ml world and then you can build
+Speaker 2: products that
+Speaker 1: are 5-10 years ahead of you Google Microsoft apples excetera
+Speaker 2: without a doubt right it's crazy did you know do you know how much
+Speaker 1: Google pays for an engineer
+Speaker 2: that has like ground like state-of-the-art ml
+Speaker 1: background so there is a an engineer that
+Speaker 2: from Canada I can't remember his name he was
+Speaker 1: a professor at so it's not super far but like some papers and cool stuff but Google pay 500
+Speaker 2: bass unlike 2 million in stock for your vest stock
+Speaker 1: just to join Google for folks that know how to wield the stuff if you engage his class and you go to a job interview and you can
+Speaker 2: recount the specifics of what you've accomplished in this class you
+Speaker 1: are on the top of the market I
+Speaker 2: interview people Everyday by the way guys that come with TVs that's a data
+Speaker 1: science and ML and all this
+Speaker 2: stuff I cannot impress upon you how a lot of stuff is made
+Speaker 1: up in the market doesn't like almost everybody says data scientist when they like watch 3 videos on YouTube. I kid you not I need to go to ask him what they've done with the largest bass they worked in and you'll hear it feel to be describing the tutorial like that's all they describe it's just nuts and so I'll tell you you will have to build us you'll be actually the most competitive the
+Speaker 2: dream Talent that's companies want and I will make you so excited about this class I think it's a big deal
+Speaker 1: but
+Speaker 2: I used to
+Speaker 1: because I looked at the papers and the papers were from 2020 and they dominated everything else and so I actually use the absolute City our train is fine-tuned you look fine tuning isn't zero shot learning and all this craziness I'm like a bird slowed
+Speaker 2: so
+Speaker 1: awesome so we have the presentations next week right and so basically it's a couple size I have demo is a fly's here is you really only need maybe you can accomplish this in 6th and 69 slides for the whole
+Speaker 2: group
+Speaker 1: but there's no there's no limit at other than the time limit the only have
+Speaker 2: like 10 to 15 minutes to present your pitch and then you're good
+Speaker 1: Monday and Wednesday we're going
+Speaker 2: to have two batches
+Speaker 1: by Wednesday this week you'll know which batch you're in everybody wants to be in the Wednesday back so I got it like just do it
+Speaker 2: randomly if that's okay like you know that
+Speaker 1: it's relatively flax if you have a real reason that you may not be able
+Speaker 2: to you know
+Speaker 1: you need extra time to let me know an email and I will
+Speaker 2: sort it out with you guys people get very anxious about these slides are due by end of next week and the write-ups do at the end of next week so next Friday any questions on that right right so yeah
+Speaker 1: so typically what happens is
+Speaker 2: in the presentation
+Speaker 1: this little bit of evolution that happens right so there's a little bit of feedback that goes on
+Speaker 2: and then the right I'm still don't usually
+Speaker 1: happen until after the presentation it's one page I'll show
+Speaker 2: you what it looks like so it's it's
+Speaker 1: it's a journey that you take the feedback from the presentation and
+Speaker 2: then you finalize the deck to turn it in any other questions it's a mixture of both
+Speaker 1: right it's really a judgment call like it's what's a qualitative
+Speaker 2: scoring
+Speaker 1: you do not if you put effort and you don't have
+Speaker 2: to worry okay if you're engaged you don't have to worry because it's a conversation to me right let's talk and so you know if if you if you know put an
+Speaker 1: effort and it's interesting
+Speaker 2: you'll do well I
+Speaker 1: don't want to give you guys a sense that
+Speaker 2: see this is a very tricky line to walk as a as an instructor cuz if I tell you all that
+Speaker 1: it's relatively straightforward to do well then you won't give it as much as you would if I was like oh yeah I really I'm going to be looking for a frosty but the reality is
+Speaker 2: I
+Speaker 1: haven't had a group
+Speaker 2: bombies. I just haven't had it right and so this is tough to do especially with a larger class
+Speaker 1: what I'm going for is for you to love your work
+Speaker 2: that's it I'm so I'm really looking for engagement
+Speaker 1: engagement means you care about what you're doing
+Speaker 2: that's
+Speaker 1: it so when you come and present what I would love to see is that you're connected to your
+Speaker 2: work right and you're not just going through the motions that's it and it'll come out so
+Speaker 1: don't worry like have fun with this is my point have fun with this don't stress about how you'll do if there's an issue come talk to me it's very easy like reason at all
+Speaker 2: so anyway any other questions is that helpful does that make sense quality write up complete and clearly written right so you know that's
+Speaker 1: what you're shooting for our for goodness and general notion of goodness
+Speaker 2: right natto Gohan I expect changes all the way
+Speaker 1: through this things are so fluid right like what you feel is
+Speaker 2: right and
+Speaker 1: then we'll navigate to a good scope that makes sense
+Speaker 2: these projects always change until the final
+Speaker 1: presentation I've never
+Speaker 2: seen
+Speaker 1: the final presentation map exactly
+Speaker 2: to the ambition as presented in the beginning and
+Speaker 1: middle of the class presentations all about
+Speaker 2: right give me an update
+Speaker 1: since for the rest of the class the art of any kind of endeavor like this is one of the key things that folks I think learn after you do this a couple times scoping is the magic of
+Speaker 2: success . Is generalize has to be honest products you
+Speaker 1: Scope
+Speaker 2: you Scope well for what
+Speaker 1: your capability might be your realistic the realisticness of what you want to set out to do the realisticness of what your
+Speaker 2: team can accomplish the
+Speaker 1: realisticness of what company can
+Speaker 2: you Scope
+Speaker 3: properly
+Speaker 2: and you will succeed most folks most of my experiences comes from scoping it's an expectation mismatch right like
+Speaker 1: because then that you can't discourage
+Speaker 2: mind it's very it's very subtle
+Speaker 1: thing
+Speaker 2: in such a short time frame
+Speaker 1: but yeah that's
+Speaker 2: for sure yeah interesting
+Speaker 1: okay.
+Speaker 2: There's a lot of missed opportunity for true growth because of
+Speaker 1: the anxiety that comes from doing things wrong
+Speaker 2: you know what I mean like being being free to try things is part of what learning is so that's kind of my view that I would love to have you guys went into is try
+Speaker 1: things you know and there's no penalty for learning something
+Speaker 2: so usually the right of covers
+Speaker 1: what is going project why is it interesting challenging is there any prior work existing commercially available product that similar to what you do what's the difference what are the features functions how to evaluate the
+Speaker 2: results this is what they typically look like I mean I asked for one page this group gave me a case of a
+Speaker 1: half but you know I
+Speaker 2: hate people who produced
+Speaker 1: and I just want to capture an essence
+Speaker 2: of what what you present
+Speaker 1: right until this slide deck is available until we got to see an example is exactly what a good example of
+Speaker 2: this one pager looks like questions questions awesome how many people are a little anxious be honest so all right
+Speaker 1: let's go get us some example flies this may help
+Speaker 2: run it so
+Speaker 1: this was a group last year this is Melody
+Speaker 2: conversationally I-4 Spotify so what is Melody this is the description of what the project is Right conversational Spotify helper built-in Alexa
+Speaker 1: what can it do its
+Speaker 2: attack so basically controlled Advanced playlist variety of input commands there's reach goals to accomplish those something even more interesting right karaoke mode right point system on how well you do gamified
+Speaker 1: a bit those are very small stones
+Speaker 2: the tools that they
+Speaker 1: would like to use these always change
+Speaker 2: this all these changes so this is a scope of the tools they show us a bit about what the apis look like that they that generates the idea this is a
+Speaker 1: first Approach
+Speaker 2: at at
+Speaker 1: how they're going to design the application
+Speaker 2: and that was that that was the presentation okay I just always
+Speaker 1: changes this no getting it right
+Speaker 2: there this is what we're setting out to do okay and
+Speaker 1: then the Journey of scoping it to something that creates value at the end of the class
+Speaker 2: that's an important piece of how to be successful
+Speaker 1: another example is onion
+Speaker 2: finder and problem statement similar what is it bottom line up front so the kind of features that they wants to accomplish
+Speaker 1: sample utterances they threw that and they
+Speaker 2: gave me oh nice stuff there
+Speaker 1: this is their architecture
+Speaker 2: diagram of how they want to put it together then success Milestones the related technology summary that's it
+Speaker 1: so these are concrete
+Speaker 2: examples of what this pitch looks like okay all right any questions
+Speaker 3: cool
+Speaker 1: so this is the first of three presentations about your project in the
+Speaker 2: class and
+Speaker 1: after the Patch there is the update and then there's the final
+Speaker 2: presentation all right so we can switch gears 2dn review I feel free to ask questions at any point about what's coming okay
+Speaker 1: so does everyone remember where we left off
+Speaker 2: last time good the three flies that are supposed to paid you back in but this is the most important one this is really what a standard typical feed-forward neural network looks like you've got an input layer this is where your data touches the model then you have a hidden lair these are weights which each one of these lines represent interact with your summons squash that happens in each neuron write your activation function and then the signal goes onto the following layer in this case is just three
+Speaker 1: until you have your output after one of those summoned
+Speaker 2: squashes
+Speaker 1: what happens with those summoned
+Speaker 2: splashes is that the strength of the signal that propagates is determined I think that was a key point that may I made out of emphasize enough the human brain and so far as when your neurons
+Speaker 1: fire
+Speaker 2: the strength of that firing is what
+Speaker 1: have bearing on whether or not
+Speaker 2: the next neuron in the chain fires and the next neuron in the chain
+Speaker 1: fires and that's what's being achieved with that's in here and then the weights and the mapping it to a line to what the output value looks
+Speaker 2: like
+Speaker 1: will determine how things are magnified
+Speaker 2: or not magnified at each layer and
+Speaker 1: the likeliness of the firing is where the knowledge is encapsulated
+Speaker 2: much like our brain
+Speaker 1: our knowledge is encapsulated in the likeliness neurons some combination of neurons will fire and some combination of firing is where the concept of an apple lives in your brain
+Speaker 2: and that's what we're trying to capture in this bring the concept of a 5 125 looks like lives in the likeliness that signals are sent
+Speaker 1: through the final signals that come out a signal that comes out it's right and if it's if you put a 5 in an f45 doesn't come out
+Speaker 2: it's wrong all right and
+Speaker 1: permuting the weights were changing the values of the parameters which are like
+Speaker 2: weights excetera in this model weights and biases in this model so
+Speaker 1: that we get the fire we want with the day that we
+Speaker 2: know about awesome any questions on neural networks all right
+Speaker 1: so one of the big questions Venice how how do we represent numbers represent language as numbers right cuz it's a picture I got pixels this is grayscale so even nicer
+Speaker 2: every single
+Speaker 1: Pixel is a member so that's what I'm going to run through my neural network words
+Speaker 3: well
+Speaker 1: let's talk about how we
+Speaker 2: represent words
+Speaker 1: do some basic terms for the next few slides in facts
+Speaker 2: about this
+Speaker 1: the allowable structures in the language semantics of the meaning
+Speaker 2: the meaning of what the
+Speaker 1: what the sequence of words and code is important it's a feature ization that uses a vector of word counts ignoring order
+Speaker 2: that is if I look in a sentence
+Speaker 1: I'm going to create a way to view that sentence like a bag of words just jumbled up I'm not going to care about the sequences of the world which seems silly but it seems silly
+Speaker 2: because I use this example a lot I'm like if you
+Speaker 1: go to McDonald's and you're like talking to the nurse and they're like with cheeseburger no ketchup with ketchup no cheese
+Speaker 2: burger same words a
+Speaker 1: bag of words model is going to look at that as the same thing but the semantics are wildly different
+Speaker 2: so that's a little anecdote to illustrate
+Speaker 1: what might be lost with backwards but bag of
+Speaker 2: words is a very common way
+Speaker 1: to Catherine will look at what it looks like a
+Speaker 2: gram is
+Speaker 1: sequences so this is actually two addresses backwards thing so you looking at in the
+Speaker 2: bag of sequences so I will look at what that looks like so that means I'll take if
+Speaker 1: you have a two or three
+Speaker 2: bucks each other or the combination of three words like there's a
+Speaker 1: problem so how do we look at what is bag of
+Speaker 2: words is every word in the language can have a ID
+Speaker 1: so if you were to put that in an array let's say English is most have like 500 thousand
+Speaker 2: words or something pregnant from
+Speaker 1: wrong. Just being a real 500,000 Elementary not a real every number
+Speaker 2: number two
+Speaker 1: in a Terrain my top and be the work orange
+Speaker 2: so you can represent
+Speaker 1: all of the words in the language of the
+Speaker 2: Giant mapping of word to ID large
+Speaker 1: so when you do that here's what it looks
+Speaker 2: like you'll have a sentence the cat sat on the map right now
+Speaker 1: that we have our 5000 element Factor
+Speaker 2: on every
+Speaker 1: of those words has an ID in the vector or a location you guys think of the index as an ID for this
+Speaker 2: example and then you just see a sequence of IDs so you can just map words
+Speaker 1: you can get a string of words and then just see a sequence of ideas when you use
+Speaker 2: this dictionary base bag of words approach so this is how we bag of words in so you can take the sentence right and then
+Speaker 1: in your vector that is the size of 500,000 you have a vector to represent the
+Speaker 2: sentence so the whole whatever sentence you have
+Speaker 1: you have a 500000
+Speaker 2: Factor that has a count of
+Speaker 3: how
+Speaker 1: many of that word appears so if your first element is
+Speaker 2: duh you'll have two of them right I meant cat you
+Speaker 1: have one cat 0001 that one on and then one more so here you can you can represent that
+Speaker 2: sentence or any sentence or any string of tax would have
+Speaker 1: 500,000 word Vector
+Speaker 2: 500,000 element Vector where the
+Speaker 1: position and Vector that corresponds to the word just has a count of how many words
+Speaker 2: are present in your bag duffle bag of words feature ization so you would just store it like
+Speaker 1: every word idea how many there are for the ones that have weird
+Speaker 2: ideas right there's a lot of details
+Speaker 1: what I'm presenting here is the
+Speaker 2: journey that gets us to how we do it today
+Speaker 1: right this is just some of the foundational pieces you can have a bag of words
+Speaker 2: way of capturing the a piece of text where you're just counting the occurrence of each word in that text and you're representing it as a sparse Vector in this case or as a
+Speaker 1: now with that you can do the same with any grams right because you don't like to lose the ordering so an engram is we're going to instead of using each word has an
+Speaker 2: ID you can say each combination of word has an ID right so the cat has one element has another element on the map right that's a two
+Speaker 3: so you
+Speaker 2: have a much bigger Factor because you're doing
+Speaker 1: then you have a unique
+Speaker 2: ID for every purple of words that come in a sequence of
+Speaker 1: the combination but whenever you see an engram
+Speaker 2: with an being tour ending 3 and you always see it like less than five that's because of the
+Speaker 1: complexity that comes when you have large end you can represent it this is what that
+Speaker 2: representation means okay so that bag of words backwards and engrams okay
+Speaker 1: now you can do all kinds of cool stuff you represent
+Speaker 2: your sentence you can actually do a combination as a representation
+Speaker 1: because then that combination and codes a little bit more information right not only do you see what words are in there but you can kind of see the two grams in there under three grand I didn't you can actually have more complex more beefy ways to represent that text until this is this is how you'll see whenever you see engrams or bag of words in literature that's what they're talking about it's a way of
+Speaker 2: representing things with those kinds of those kinds of representations one gram backwards
+Speaker 1: and I can see that I have 17
+Speaker 2: Fantasticks and one terrible in
+Speaker 1: there the neural network and say all day and probably a very
+Speaker 2: happy happy face but if I see the opposite 17
+Speaker 1: Terrible's and one fantastic then the morgue to use the
+Speaker 2: encoding and a problem is if you say something like
+Speaker 1: this is why you need to Gramps if you say this is stupid
+Speaker 2: Lisa and this is stupidly fantastic or you can
+Speaker 1: say this is stupid right you might need that too because that's just one one it'll say it's neutral but it's actually
+Speaker 2: one way or the other so so
+Speaker 1: that's so we're just talking about that topic taking words and representing it in a way that a model
+Speaker 2: can understand it in the useful way yeah okay follow the power law of course right so that means that
+Speaker 1: this can be much more common to grams and rare or two grams you're
+Speaker 2: going to see in a sentence I don't know like bicycle Newtonian physics why you're not going to see that so that's a tree that
+Speaker 1: will never
+Speaker 2: appear right
+Speaker 1: and there's actually way more three grams that will never appear in the language than there are three friends that will appear in the language so luckily you don't have to store all of it is getting into those things right and so I cut this short because honestly not you know what it is
+Speaker 2: how many people feel like they know what a bag of words in a engram is
+Speaker 1: feel you. by the way just count the occurrences of unique words
+Speaker 2: in your sentence and an engram count the unique and combos of words in your sentence
+Speaker 1: into a numerical representation that you can
+Speaker 2: use in a model to train it in a very basic this is
+Speaker 1: basic thing that we can actually do with deep learning this is like where it started and actually the first paper you're going to read
+Speaker 2: this right now
+Speaker 1: because it's called one hot encoding so instead of looking at it as integers just
+Speaker 2: think of it as binary right so
+Speaker 1: essentially
+Speaker 2: you take the sentence
+Speaker 1: and then you turn each word into
+Speaker 2: their vector and then you have a sequence of those
+Speaker 1: factors right man bites dog let's say this is your whole vocabulary your whole language
+Speaker 2: not a very expressive language
+Speaker 1: but that's all the words in the language than that distance looks like this
+Speaker 2: sequence so you have three vectors a vector for each sentence and it's dog One Bites to man The Third and it's not see a picture from the first paper there's
+Speaker 1: something called this is an example of how it goes through a network
+Speaker 2: okay so
+Speaker 1: we're going to talk about this not work later but I'm just going to share an example
+Speaker 2: in coding
+Speaker 1: then you can take the sequence word T-minus 1 TV in the word
+Speaker 2: you're on spell the word you're on you can take
+Speaker 1: two words before it into words after it and you can run those
+Speaker 2: as an input it's a window of for right well window size to 2 before 2 after you take those words these four words
+Speaker 1: continuous bag of words what it does is it predicts what word should be in the middle of your
+Speaker 2: sequence of words spring pool problem there's so much to talk about this like I can get off track what I'm just trying to show you but what I'm trying to show you
+Speaker 1: is you're one hot and cold your words go in as those vectors would have one on which word it is I'm done you can train a neural not not work to do something useful
+Speaker 2: so the
+Speaker 1: word that comes out is going to be also add one hot encoding that encodes the predicted word
+Speaker 2: right
+Speaker 1: so see if I was a problem of taking those windows of the
+Speaker 2: cat on floor
+Speaker 1: and predicting
+Speaker 2: what's that middle word self esteem by works on
+Speaker 1: I'm so when those words go in you've got some news on that work learning that's going to Output the encoding for
+Speaker 2: sat right is that clear all right
+Speaker 1: this is a cool model of the reason why I'm going to die because they decide I don't have to get a whole bunch of forwards and then label the right where to go in in the middle I can literally just say take this structure and go read Wikipedia because I've got an incredible amount of sequence real language that in an unsupervised way I can just March along the the text I need to just look at the words and saying all these are the two of them that's the middle and it's training itself to predict that
+Speaker 2: right so
+Speaker 1: that works in in length in language and it's actually incredibly powerful oh yeah yeah don't totally totally do supervised learning means if I would do it if I was going to take this model in training and
+Speaker 2: supervised way Imma have to prepare a dataset I
+Speaker 1: might have to go and create
+Speaker 2: one and an established truth
+Speaker 1: and I would have an expert would have to do that so I'll supervise person
+Speaker 2: would have to do that
+Speaker 1: or would have to do that I didn't give it to date it's laborious right
+Speaker 2: cuz
+Speaker 1: did the Bronx with those two what what it should predict as a little
+Speaker 2: more crap so
+Speaker 1: and the prediction I'll put I'll just have to give it
+Speaker 2: examples and if you have
+Speaker 1: to manually do that then it's supervised learning but if you could just let a model if you can configure a model in such a way that I can just go
+Speaker 2: look at unstructured data and learn on its own they call them unsupervised learning so
+Speaker 3: yeah yeah
+Speaker 1: so what did end up learning is in this particular case and
+Speaker 2: then I'll talk about Superman Spider-Man
+Speaker 1: but in this particular case what it's learning
+Speaker 2: is the ability to predict the output the
+Speaker 1: one hot and coding for the word that should be in the middle of those inputs
+Speaker 2: right
+Speaker 1: so it sees this as the input in the
+Speaker 2: wild right
+Speaker 1: when you want to listen to Cheese's and put on it's making a prediction as to what's the word that should be in the middle and that means that when these numbers go in and just to be 1000 11001 excetera when those numbers go in the way the weights are configured and wavy activation function work in the weights here
+Speaker 2: it'll output 101 which is that right
+Speaker 1: so we actually need to get this not work to have knowledge we actually going to cost us
+Speaker 2: of all these
+Speaker 1: so that we get the thing that we want
+Speaker 2: out here that there's right
+Speaker 1: I'm in getting it to do that it doesn't do do it like crazy ways like that's where it's a learned model
+Speaker 2: which is which is
+Speaker 1: so cool a lot of folks don't understand really why that works on how they don't understand the parameters of the limits to how much that can work and it's not a deterministic thing that we can do you write me measure how well it
+Speaker 2: works that's
+Speaker 1: my machine learning so empirical it such an empirical science cuz somebody might change a rule do if someone said that they would know if
+Speaker 2: it's better or worse unless it's Friday and that's a dozen very kind of beautiful
+Speaker 1: thing about
+Speaker 2: this discovery but yeah that's the explanation and soul
+Speaker 1: in the pixel landscape let's think of the pixel example supervised learning
+Speaker 2: is I
+Speaker 1: got to go get pictures of Batman and Superman and then I'm going to give it to the
+Speaker 2: model right and then I'll
+Speaker 1: tell it that and then I expect the model to be able to see and recognize he will
+Speaker 2: enter Batman that's a supervisor training an unsupervised approach if you if one could be constructed is I never given any data I just set it up and I say
+Speaker 1: go off into the world
+Speaker 2: and learn you know into this world and learn what to run by my looks like
+Speaker 1: a man I'm indeed I'm not aware of any image classification models that learn in an unsupervised way I'm not familiar
+Speaker 2: with it no actually I am but that would be
+Speaker 1: don't get on supervised mean and I thought I was right now on unsupervised way
+Speaker 2: to train an image model would be to say go
+Speaker 1: read all the web pages on the internet
+Speaker 2: and I'm going to let you assume that the text
+Speaker 1: around the images correspond to the
+Speaker 2: images
+Speaker 1: and I will get on supervised mean so I don't have to go and prepare a dataset I'm just going to let this model go and read the internet and then it should come back and say I can recognize a fats and dogs and planes because I'm not the internet and I looked at the image and then I looked at the text around it and I built a representation of that and now I'm good at that so that would be a good example of an unsupervised
+Speaker 2: shredded papers about it like check it out nobody know
+Speaker 1: but two that's one I'm here to talk about this because it's
+Speaker 2: so it's so crazy
+Speaker 1: so this is one and this is our first day for it's worth of that and that's actually be paper that changed our world
+Speaker 2: from a commercial standpoint
+Speaker 1: where to buy for the first Juggernaut that was like just the way we should be doing natural
+Speaker 2: language processing so
+Speaker 1: we talk about ideas how to train these models in this way and I made a big
+Speaker 2: splash but it turns out the hunting setup
+Speaker 1: the Stuck in the Middle hear that you get after you train it on this problem and the being really useful for other things right I'm going to look at how you can translate the learning the new problems and it's super smart and the new problem we're going to look at it
+Speaker 2: you know if you take King Midas Queen you got
+Speaker 1: Prince or something like you do math on birds like you could subtract will get there but the knowledge in here becomes really useful for a whole bunch of other things and I don't feel we're going to talk about that I'm not the symbol this a sibo formulation to get the knowledge in here I'm going to cram knowledge in the middle by training it to solve this problem you can set up other problems other models right so you can say you know what
+Speaker 2: model
+Speaker 1: I want you to look at the sentence and then predict the next
+Speaker 2: sentence it's a different one and
+Speaker 1: it's a different construction to Primm model into the knowledge into the model with a different problem solving it's using the same day to sight in a different way I'm in Maine create more knowledge or less knowledge 21 is I'm going to take a model like this and I want to take sentences of randomly
+Speaker 2: randomize a word
+Speaker 1: I'm going to randomly replace a word in the sentence and I'm going to train this model to predict which word was randomly changed that was the Burt
+Speaker 2: Innovation that was one of them
+Speaker 1: birthday to things that didn't
+Speaker 2: add up the masking which is I'm going to
+Speaker 1: randomly change the word and I'm going to let you predict
+Speaker 2: what it is I'd like
+Speaker 1: the problem prim's knowledge in here in a few.
+Speaker 2: Crazy you'll see it will look at it deeply and then it's another picture of the same stuff
+Speaker 1: you've got that one hot and coating of course this in the simplified cases like 500 500 100 then there's only one one in
+Speaker 2: it is crazy I
+Speaker 1: know you train it so that you get the
+Speaker 2: fat as the output and then this hidden Lair is what this is your embeddings which is what creates these this representation for other stuff that's not how this stuff works
+Speaker 1: for the drawbacks to 100 this this particular way of representing language one hot and coding does
+Speaker 2: drawbacks
+Speaker 1: input backers are large
+Speaker 2: island is out
+Speaker 1: of vocabulary so if there's like a new word like LMFAO
+Speaker 2: or whatever right and you see it in your texts
+Speaker 1: you may not have a thin coating for you can't really utilize it and see what they do is they just inject unknown for where is it doesn't see and then it has an incoming phone on this is a little weird but not the drawback
+Speaker 2: in the knowledge that one hot and coding can
+Speaker 1: get right under the Regatta this is actually really important there's no relationship like like there's no relationship between the word and the number the number is just in your array whichever one of those bits are hot right or 1
+Speaker 2: I know you know you might have a 1 at the first
+Speaker 1: number that and that could be like cat and then as to never give your refrigerator and there's like no
+Speaker 2: relationship between the encoding so
+Speaker 1: that's a drawback
+Speaker 2: and we're going to look at what happens when you can get richer representations because
+Speaker 1: actually what we'll end up doing is using the product of hidden layers
+Speaker 2: to be the representation which creates this magical stuff that we're going to work and back paper
+Speaker 1: so ideally we want relation between word back to us or a flag relation between
+Speaker 2: words and features of word of word embeddings to reflect features of words
+Speaker 1: so you want to be able to if you can have a way like we have that in the English language a good way to describe this is
+Speaker 2: actually don't think of a good way okay like like for instance a word like funk right there's actually a higher level it's not just a random word it's like it kind of sounds like Funk Funk so
+Speaker 1: word means almost audibly what it is so there we have a higher level value to the what the structure of the word is that is
+Speaker 2: helpful slam may be the number one Eureka
+Speaker 3: I
+Speaker 1: don't know where that might be really good for that
+Speaker 2: yeah yeah yeah that's actually funny thing about sorry
+Speaker 1: this is
+Speaker 2: actually just kind of reiterating this is actually a hint right cuz you can get based on the weights that are coming out
+Speaker 1: you can actually get away to represent words on the on the way to produce after the models trained right so you can take a hidden layers
+Speaker 2: output and
+Speaker 1: have that heavy layers output produce a sequence of numbers that represents the word that would be the input and then you can get something that you can do the lies and interesting ways there's a little bit of a pre
+Speaker 2: pre a little hint of what's to come when we look at the stuff more deeply so we got a couple more minutes
+Speaker 1: bear with me while I give a little preview
+Speaker 2: of what the come of where we're heading right so
+Speaker 1: if you were to have this representation that wasn't one hot anymore
+Speaker 2: I train the model
+Speaker 1: that takes in one hot and Coatings
+Speaker 2: and outputs
+Speaker 1: something that might mean something because I just crammed a bunch of knowledge in the middle of this
+Speaker 2: model and now I can take
+Speaker 1: advantage of whatever I traded with him let's artificial problem that captures meeting I'm just a creative this is how the researchers did and they're like I'm a creative person we got all the
+Speaker 2: data I know they're just like the corn meaning of this data and cram it into a model
+Speaker 1: I want to see what it was like you know what if I can predict the middle I don't know how they can
+Speaker 2: be the model will know
+Speaker 1: something if I can randomly change words and then predict which one was change name to model them know something about our language if I can predict the next time you give me a sentence from the depths that right in the middle of the mall in like know something deep about the language has a problem like that and then I get the lyrics to produce these weights to introduce this representation of
+Speaker 2: a word
+Speaker 1: now look at that dude this is one of those creative things in the
+Speaker 2: on the planet that led to work of act right and that's where we're going to look at
+Speaker 1: maybe we can get such a representation that if you were to look at the Clusters you would see similarities like yeah apple and orange should be close to each other
+Speaker 2: and bus and Country Angels related that's interesting that
+Speaker 1: you know you got the traditional bag of silliness we talked about this
+Speaker 2: boring
+Speaker 1: but a numerical representation that can stories word in a point of space were represented by a vector generate 300
+Speaker 2: it's on supervised we'll get to the math please this is yeah that's how it works
+Speaker 1: but maybe you can get like interesting relationships like this represented in the space right
+Speaker 2: like you know if you take King and subtract Coon you
+Speaker 1: may get mad and if you think we need some tracking you got woman
+Speaker 2: and you know
+Speaker 1: you might be able to have these interesting numerical relationships
+Speaker 2: expressible right like a country to its capital might have the
+Speaker 1: same almost mathematical difference
+Speaker 2: so if I if I took Spain in
+Speaker 1: Madrid subtracted the difference between freedom and read and added it to Italy maybe I'll go close to Rome so I'm like so how is that subtraction I'm capturing what it is to be a capital this is just an emergency out of cramming stuff in the middle of the
+Speaker 2: magic that's the crazy that's right right and
+Speaker 1: all kinds of weird things
+Speaker 2: with these models that just seems like like
+Speaker 1: Skynet
+Speaker 2: AI so you can
+Speaker 1: do machine translation with those kind of
+Speaker 2: methods you can do parts of speech
+Speaker 1: tag in with that kind of methodology
+Speaker 2: relationship extraction this is what we talked about it but you know
+Speaker 1: big bigger Miami Florida Einstein scientist you can
+Speaker 2: actually capture relationships and then infer on the analogous relationship right like you know
+Speaker 1: Einstein the scientist has been going to artist right like you might as well go
+Speaker 2: is kind of like what science is the thing and then you'll see what its losses for Vango you do sentiment analysis right
+Speaker 1: within this or unsupervised way in read a bunch of texts it just read a bunch of texts no one trained in
+Speaker 2: anything and he said what's a lot like that and then it's like a
+Speaker 1: sad meaning sad heartbroken
+Speaker 2: disheartening some of the stuff I may be that there was a really sad people
+Speaker 1: saddens me distressing reminders bobbing
+Speaker 2: interesting
+Speaker 1: magic regretful Bittersweet and just told you that all that stuff is very close to
+Speaker 2: sad and
+Speaker 1: that's kind of cool because you didn't do anything other than said hey model
+Speaker 2: go read Wikipedia
+Speaker 1: and look at what the middle word is
+Speaker 2: and now I know this
+Speaker 1: and that's the magic of the first paper we're going to look
+Speaker 2: at which is all about Define feeble doing this on Wikipedia
+Speaker 1: call three-time Laughing. 7 Minutes questions
+Speaker 3: I think that are for true because similar words are used in similar contact you might say that just kidding cast Chase's place where is dog plays Fetch
+Speaker 1: and that's a wonderful question and the way the way the best answer I
+Speaker 2: have in the way that I've heard people describe it is it's a multidimensional space what we've been looking at are really simplified two-dimensional kind of things right that's not too much space so
+Speaker 1: the number of Dimensions can give you a
+Speaker 2: capacity for
+Speaker 1: the amount of relationships that can
+Speaker 2: be captured almost
+Speaker 1: right because Kevin dog might be closed as nouns and objects but maybe
+Speaker 2: cat chases is closed you know like you'd expect to see a cop chase you know what I mean more than escape
+Speaker 1: and so that could be captured or maybe
+Speaker 2: Kat and I don't know cat like as a slang word to be like oh that's a cool cat I
+Speaker 1: don't I don't know right like what you might need to capture that too in the one
+Speaker 2: representation
+Speaker 1: that the width of the dimensions that that kind of has bearing on the capacity of how much relationship you can model it's much like you can think about mapping that to a linear Dimension where is a cat to be five in a dog to be 17 you can't you can't not as many relationships between those in a low dimensional space but in high dimensional space across some Dimension you may be able to capture one relationship and it
+Speaker 2: goes. It's it's kind of like
+Speaker 1: so there is a capacity to how much
+Speaker 2: knowledge you can capture
+Speaker 1: another properties is how deep in the layers
+Speaker 2: is the best layer to extract for your problem so your question is is a good one
+Speaker 1: and the real answer is folks don't necessarily know what captured in those
+Speaker 2: representations they
+Speaker 1: tried some things and noticed some interesting relationships that
+Speaker 2: he merge like well what's the distance
+Speaker 1: of a word oh it's a movie similar given that
+Speaker 2: dataset but there's actually a new
+Speaker 1: kinds of realizations right like like
+Speaker 2: 53 actually kind of work like this
+Speaker 1: it's a different problem but it just learn some silly unrelated thing to criminologist they didn't know that being able to talk code like me I'm to describe code and it'll write code is a possibility and then it can also answer multiple-choice
+Speaker 2: questions and then it can also
+Speaker 1: generate news articles that look realistic it's like it's doing all of these other things in that model there's there's things caption that we don't fully understand and we don't even know what the bottles are in an actual because you can't measure it
+Speaker 2: but this is some of the principles right you're you're capturing relationship with dimensionality
+Speaker 1: and this into a relationship between the dimensions that end up mattering to
+Speaker 2: write and no one knows what it is
+Speaker 3: do you think the relationship between directions to me. I don't know something like other animals trailer I can write
+Speaker 1: this is great that's a great question is related because it learns from the data
+Speaker 2: you give it that's the key thing right so if you were to take you didn't use Wikipedia I knew used I don't know like film Scripts cat may not have anything to
+Speaker 1: do with dogs wanted learns these
+Speaker 2: relationships from that data sent so so
+Speaker 1: insofar as it's not right
+Speaker 2: it's it's
+Speaker 1: it's whatever knowledge could be produced from the dataset given and that particular problem
+Speaker 2: right
+Speaker 1: that was the final
+Speaker 2: word is a problem cibao is the problem so
+Speaker 1: the combination of that problem Plus data Surplus capacity of the model
+Speaker 2: produces the
+Speaker 1: actual in learning in a deterministic way but you can change any of those variables and get weaker or stronger links across different
+Speaker 2: dimensions so if I was to instead of
+Speaker 1: use the word in the middle what if I use the
+Speaker 2: next word right and I just trained
+Speaker 1: the model and predicting what the next word
+Speaker 2: is you may
+Speaker 1: not get cat and dog being similar right cuz dogs might always
+Speaker 2: go to fights and taught all of those scratches right so so
+Speaker 1: then your dog and cat might be very different
+Speaker 2: right because
+Speaker 1: now cat is associated to chairs that scratch the floor and dogs are associated to babies who bite the your binky or whatever right I meant so you might get out so I can change the problem that it's using two on the same data you can get completely different representation but the middle word t-ball I would I would
+Speaker 2: ask
+Speaker 1: you can replace cat and dog in the middle of a sentence the cat ran really fast the dog ran really fast right like it's more replaceable so that one captures that nature of relationship better and it's an art form like the guy doesn't see what it produces see what useful intelligence is
+Speaker 2: are produced from from these endeavours the train exactly right right that's a good point
+Speaker 1: total in the paper there's two there's cibao which is predicting the middle word and then to skip ground which is taking just the word in predicting the outer
+Speaker 2: words does
+Speaker 1: the direct opposite let me predict the forwards next to me
+Speaker 2: cuz I'm my work and a paper shows that see if it works better for the things they like
+Speaker 1: but there was one or two things
+Speaker 2: work better for
+Speaker 1: it's just the nature of
+Speaker 2: of of the
+Speaker 1: problem that you give the model
+Speaker 2: it'll
+Speaker 1: determine what kind of hidden knowledge does the model
+Speaker 2: gosh that's the best I can do to I know it's not
+Speaker 1: fully satisfying you want to
+Speaker 2: explain it but it's magic awesome I'll see you guys Wednesday
+Speaker 1: and anyone who's anxious about next week come talk to me please I will talk through it we'll figure it out together
+Speaker 2: team all
+Speaker 3: right cool hey I have a sister unfortunately I have no physical therapy
+Speaker 1: to work I'm glad you're doing good
+Speaker 3: Brenda I'll be
+Speaker 1: missing you. Can we find contribute as long as you contribute some presentation like offline and we can accommodate
+Speaker 2: any
+Speaker 1: time yeah I know right I mean last time I just rented it
+Speaker 2: so so
+Speaker 1: participation often gives an opportunity for folks who might miss something then I can
+Speaker 2: kind of pay attention to whether they were parts of the
+Speaker 1: participating in practice
+Speaker 2: it's kind of a group was saying and it's very difficult subtract from a tactical
