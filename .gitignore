@@ -141,4 +141,4 @@ cython_debug/
 *.mp4
 
 # credential
-key.json
+cert/
