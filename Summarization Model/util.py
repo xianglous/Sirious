@@ -46,4 +46,5 @@ if __name__ == '__main__':
         txt = ' '.join(txts)
         n_words = len(txt.split())
         ic(n_words)
-        ic(txt[:500])
+        # ic(txt[:500])
+        ic(txt)
