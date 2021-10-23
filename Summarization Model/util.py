@@ -26,12 +26,24 @@ def load_ted_clean(fl):
     return lns
 
 
+def get_ted_eg(crop=True):
+    """
+    3310 words in the text, doesn't fit in most traditional models
+    """
+    FNM = 'data/example/ted_does-schools-kill-creativity, cleaned.txt'
+    with open(FNM) as f:
+        return ' '.join(load_ted_clean(f))
+
+
 if __name__ == '__main__':
     fnms = glob.glob('**/*.txt', recursive=True)
     fnm = list(filter(lambda x: 'cleaned' in x, fnms))[0]
+    ic(fnm)
     with open(fnm) as f:
         txts = load_ted_clean(f)
         ic(len(txts))
 
         txt = ' '.join(txts)
+        n_words = len(txt.split())
+        ic(n_words)
         ic(txt[:500])
