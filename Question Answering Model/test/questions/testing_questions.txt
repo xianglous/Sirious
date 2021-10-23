@@ -1,10 +1,15 @@
 1,Where is Berlin?
 1,Where is the capital of Germany?
-1,Where is some of Berlin's electric energy imported from?
-1,How many research universities are there in Berlin?
-1,When was the reunification in Berlin?
+1,How many public research universities are there in Berlin?
+1,What date was the reunification in Berlin?
+1,What is Berlin's economy based on?
 2,Where is the captial of Romania?
 2,What treaties were signed in Bucharest?
 2,What happened to Bucharest since 2000?
 2,When was Bucharest occupied by the German forces?
 2,What is a major part of Bucharest's architecture?
+3,Where is the capital of England?
+3,What led to the cholera epidemics in London?
+3,What splits London into North and South?
+3,What may have contributed to the 50 murders from the start of 2018 to mid April 2018?
+3,What are the top 10 most visited attractions in London in 2015?

@@ -1,0 +1,75 @@
+1: Where is Berlin?
+Original: 'northeastern Germany' with score 0.68816739320755
+Neural: 'northeastern Germany' with score 0.5927378535270691
+Clustering: 'northeastern_Germany' with score 0.5832619667053223
+NeuralCoref: 'northeastern Germany' with score 0.7960402369499207
+1: Where is the capital of Germany?
+Original: 'Berlin' with score 0.8429542779922485
+Neural: 'Berlin_-_Brandenburg' with score 0.824838399887085
+Clustering: 'Bonn' with score 0.6859802603721619
+NeuralCoref: 'Berlin' with score 0.7868703603744507
+1: How many public research universities are there in Berlin?
+Original: 'four' with score 0.9367006421089172
+Neural: 'four' with score 0.9127865433692932
+Clustering: 'four' with score 0.932510495185852
+NeuralCoref: 'four' with score 0.8801761865615845
+1: What date was the reunification in Berlin?
+Original: '3 October 1990' with score 0.9685540795326233
+Neural: '3 October 1990' with score 0.974521815776825
+Clustering: '3 October 1990' with score 0.9767652153968811
+NeuralCoref: '1990' with score 0.9709563255310059
+1: What is Berlin's economy based on?
+Original: 'high-tech firms and the service sector' with score 0.8546661138534546
+Neural: 'high - tech firms and the service sector' with score 0.6447203159332275
+Clustering: 'high - tech firms and the service sector' with score 0.8026992082595825
+NeuralCoref: 'high-tech firms and the service sector' with score 0.8174513578414917
+2: Where is the captial of Romania?
+Original: 'Bucharest' with score 0.4501446485519409
+Neural: 'Bucharest_'s' with score 0.3904156982898712
+Clustering: 'royal palace' with score 0.43963611125946045
+NeuralCoref: 'Bucharest' with score 0.807285487651825
+2: What treaties were signed in Bucharest?
+Original: 'Religion' with score 0.10103650391101837
+Neural: 'Treaty of Bucharest' with score 0.27157607674598694
+Clustering: 'Treaty of Bucharest' with score 0.2528935372829437
+NeuralCoref: 'Treaty of Bucharest, between the Ottoman Empire and the Russian Empire' with score 0.10532668977975845
+2: What happened to Bucharest since 2000?
+Original: 'the city has been continuously modernised' with score 0.28371915221214294
+Neural: 'Bucharest_'s has been continuously modernised' with score 0.1863146871328354
+Clustering: 'historic buildings in the city centre underwent restoration' with score 0.2653656601905823
+NeuralCoref: 'Bucharest has been continuously modernised' with score 0.26182690262794495
+2: When was Bucharest occupied by the German forces?
+Original: 'Between 6 December 1916 and November 1918' with score 0.563575029373169
+Neural: 'Between 6 December 1916 and November 1918' with score 0.45113351941108704
+Clustering: 'Between 6 December 1916 and November 1918' with score 0.41578802466392517
+NeuralCoref: 'Between 6 December 1916 and November 1918' with score 0.5383576154708862
+2: What is a major part of Bucharest's architecture?
+Original: 'Landmarks' with score 0.417451947927475
+Neural: 'Communist era architecture' with score 0.8411065340042114
+Clustering: 'blocuri' with score 0.4716508090496063
+NeuralCoref: 'high-density apartment blocks' with score 0.4132690131664276
+3: Where is the capital of England?
+Original: 'south-east England' with score 0.3945668637752533
+Neural: 'London_'s from Winchester' with score 0.07730330526828766
+Clustering: 'London_'s from Winchester' with score 0.19039733707904816
+NeuralCoref: 'London' with score 0.3868103325366974
+3: What led to the cholera epidemics in London?
+Original: 'overcrowded conditions' with score 0.5326544642448425
+Neural: 'overcrowded conditions' with score 0.8933555483818054
+Clustering: 'overcrowded conditions' with score 0.6952223777770996
+NeuralCoref: 'overcrowded conditions' with score 0.5713295340538025
+3: What splits London into North and South?
+Original: 'the River Thames' with score 0.5500403642654419
+Neural: 'the River Thames' with score 0.2758636474609375
+Clustering: 'the River Thames' with score 0.49296674132347107
+NeuralCoref: 'the River Thames' with score 0.5148272514343262
+3: What may have contributed to the 50 murders from the start of 2018 to mid April 2018?
+Original: 'Funding cuts to police in London' with score 0.47941645979881287
+Neural: 'Funding cuts to police in London' with score 0.5252282619476318
+Clustering: 'Funding cuts to police in London' with score 0.5245221257209778
+NeuralCoref: 'Funding cuts to police in London' with score 0.6312059760093689
+3: What are the top 10 most visited attractions in London in 2015?
+Original: 'British Museum' with score 0.6075906753540039
+Neural: 'British Museum : 6,820,686' with score 0.12847700715065002
+Clustering: 'British Museum : 6,820,686' with score 0.08099085837602615
+NeuralCoref: 'football' with score 0.07377856969833374

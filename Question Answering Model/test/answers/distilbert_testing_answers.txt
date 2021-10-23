@@ -1,20 +1,76 @@
 1: Where is Berlin?
-Answer: 'northeastern Germany' with score 0.7756868600845337
+Original: 'northeastern Germany' with score 0.7756872773170471
+Neural: 'northeastern Germany' with score 0.8777487277984619
+Clustering: 'northeastern Germany' with score 0.887039840221405
+NeuralCoref: 'northeastern Germany' with score 0.8302051424980164
 1: Where is the capital of Germany?
-Answer: 'Berlin' with score 0.9210767149925232
-1: Where is some of Berlin's electric energy imported from?
-Answer: 'southern Brandenburg' with score 0.5413349270820618
-1: How many research universities are there in Berlin?
-Answer: 'four' with score 0.8041274547576904
-1: When was the reunification in Berlin?
-Answer: '1990' with score 0.9736570119857788
+Original: 'Berlin' with score 0.9210765957832336
+Neural: 'Berlin_-_Brandenburg' with score 0.9451611042022705
+Clustering: 'Berlin' with score 0.956098198890686
+NeuralCoref: 'Berlin' with score 0.9095171093940735
+1: How many public research universities are there in Berlin?
+Original: 'four' with score 0.8374274969100952
+Neural: 'four' with score 0.9287837743759155
+Clustering: '86' with score 0.9629249572753906
+NeuralCoref: '158' with score 0.8901553750038147
+1: What date was the reunification in Berlin?
+Original: '3 October 1990' with score 0.9818822741508484
+Neural: '1990' with score 0.9892615079879761
+Clustering: '1990' with score 0.9887220859527588
+NeuralCoref: '1990' with score 0.9925622940063477
+1: What is Berlin's economy based on?
+Original: 'high-tech firms and the service sector' with score 0.6466566920280457
+Neural: 'high - tech firms and the service sector' with score 0.6265215277671814
+Clustering: 'high - tech firms and the service sector' with score 0.7174608111381531
+NeuralCoref: 'high-tech firms and the service sector' with score 0.7142099738121033
 2: Where is the captial of Romania?
-Answer: 'Bucharest' with score 0.3744259178638458
+Original: 'Bucharest' with score 0.3744259476661682
+Neural: 'Arcul de Triumf Stadium' with score 0.4603249430656433
+Clustering: 'southeast' with score 0.18130190670490265
+NeuralCoref: 'Bucharest' with score 0.7458767294883728
 2: What treaties were signed in Bucharest?
-Answer: 'Treaty of Bucharest' with score 0.4367503821849823
+Original: 'Treaty of Bucharest' with score 0.4367504119873047
+Neural: 'Treaty of Bucharest' with score 0.7955617308616638
+Clustering: 'Treaty of Bucharest' with score 0.28599482774734497
+NeuralCoref: 'Treaty of Bucharest' with score 0.43939152359962463
 2: What happened to Bucharest since 2000?
-Answer: 'the city has been continuously modernised' with score 0.40422534942626953
+Original: 'the city has been continuously modernised' with score 0.40422531962394714
+Neural: 'the regions surrounding Bucharest_'s were largely rural' with score 0.3451457917690277
+Clustering: 'City_Mall underwent a property boom' with score 0.42544037103652954
+NeuralCoref: 'an economic and cultural boom' with score 0.4219362139701843
 2: When was Bucharest occupied by the German forces?
-Answer: '2001' with score 0.8102097511291504
+Original: '2001' with score 0.8102093935012817
+Neural: '2001' with score 0.9576645493507385
+Clustering: '2001' with score 0.5357532501220703
+NeuralCoref: '2004' with score 0.7640404105186462
 2: What is a major part of Bucharest's architecture?
-Answer: 'Centrul Civic' with score 0.9282330274581909
+Original: 'Centrul Civic' with score 0.9282330870628357
+Neural: 'construction engineer' with score 0.9285969734191895
+Clustering: 'Arts & Architecture' with score 0.4825710356235504
+NeuralCoref: 'high-density apartment blocks' with score 0.4061311185359955
+3: Where is the capital of England?
+Original: 'London' with score 0.9625187516212463
+Neural: 'London' with score 0.7185884714126587
+Clustering: 'The_London_Underground' with score 0.6048392653465271
+NeuralCoref: 'London' with score 0.8771947026252747
+3: What led to the cholera epidemics in London?
+Original: 'London's overcrowded conditions' with score 0.6967422962188721
+Neural: 'Greater_London_'s overcrowded conditions' with score 0.6643893122673035
+Clustering: 'London_'s overcrowded conditions' with score 0.8616799116134644
+NeuralCoref: 'London's overcrowded conditions' with score 0.6166569590568542
+3: What splits London into North and South?
+Original: 'River Thames' with score 0.698606014251709
+Neural: 'Hampstead Heath' with score 0.9149225354194641
+Clustering: 'River Thames' with score 0.6605261564254761
+NeuralCoref: 'Regent's Park' with score 0.8863099217414856
+3: What may have contributed to the 50 murders from the start of 2018 to mid April 2018?
+Original: 'Funding cuts to police in London' with score 0.42863401770591736
+Neural: 'Funding cuts to police in London' with score 0.7335439324378967
+Clustering: 'Funding cuts to police in London' with score 0.5431360602378845
+NeuralCoref: 'Funding cuts to police in London' with score 0.6814941167831421
+3: What are the top 10 most visited attractions in London in 2015?
+Original: 'British Museum: 6,820,686
+National Gallery' with score 0.39394620060920715
+Neural: 'British Museum' with score 0.6571066379547119
+Clustering: 'British Museum' with score 0.4110097885131836
+NeuralCoref: 'British Museum' with score 0.8929280042648315

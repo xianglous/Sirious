@@ -1,3 +1,4 @@
 torch
-transformers
+transformers==4.10.2
 sentencepiece
+stanza
