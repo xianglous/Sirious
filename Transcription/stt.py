@@ -8,7 +8,7 @@ def transcribe():
     with open(speech_file, "rb") as audio_file:
         content = audio_file.read()
 
-    audio = speech.RecognitionAudio(content=content)
+    audio = speech.RecognitionAudio(uri='gcs://sirious_audio/Example.mp4')
 
     diarization_config = speech.SpeakerDiarizationConfig(
         enable_speaker_diarization=True,
