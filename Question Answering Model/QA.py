@@ -1,14 +1,14 @@
 import os
 import torch
-import spacy
-import neuralcoref
+# import spacy
+# import neuralcoref
 from string import punctuation
-from stanza.server import CoreNLPClient
+# from stanza.server import CoreNLPClient
 from transformers import pipeline, AutoTokenizer, AutoModelForQuestionAnswering
 
 
-nlp = spacy.load('en')
-neuralcoref.add_to_pipe(nlp)
+# nlp = spacy.load('en')
+# neuralcoref.add_to_pipe(nlp)
 
 # model dictionary
 MODELS = {
@@ -64,6 +64,7 @@ def t2t_bot():
         print(answer)
         # print(f"Answer: '{answer['answer'].lstrip().rstrip()}' with score {answer['score']}")    
 
+"""
 def count_punct(seq):
     count = 0
     for token in seq:   
@@ -74,7 +75,7 @@ def count_punct(seq):
 
 
 def moreRepresentativeThan(m1, m2, c1, c2):
-    """Adapted from the Java code"""
+    Adapted from the Java code
     if (m1.endIndex - m1.beginIndex > 10):
         return False
     if (m2 is None) or (m2.endIndex - m2.beginIndex > 10):
@@ -106,7 +107,7 @@ def moreRepresentativeThan(m1, m2, c1, c2):
         if (m1.beginIndex > m2.beginIndex): return False
         # At this point they're equal...
         return False
-
+"""
 
 def get_pipeline(model_name):
     """Returns a QA pipeline using the model specified by model_name"""
@@ -193,7 +194,7 @@ def test_qa(model_name):
                 num += 1
     print('Finished')
 
-
+"""
 def resolve(client, text):
     ann = client.annotate(text)
     # print(dir(ann.sentence[0].token))
@@ -293,7 +294,7 @@ def test_annotate():
         cont = resolve(client, context)
         print(cont)
     return 
-
+"""
 
 
 def main():
