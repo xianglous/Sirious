@@ -10,6 +10,11 @@ def is_mmss(s):
     return re.match(r'^\d\d:\d\d$', s)
 
 
+def get_1st_n_words(text, n=2**10):
+    words = text.split()
+    return ' '.join(words[:n])
+
+
 def load_ted_clean(fl):
     """
     :param fl: An opened file
@@ -35,16 +40,28 @@ def get_ted_eg(crop=True):
         return ' '.join(load_ted_clean(f))
 
 
-if __name__ == '__main__':
-    fnms = glob.glob('**/*.txt', recursive=True)
-    fnm = list(filter(lambda x: 'cleaned' in x, fnms))[0]
-    ic(fnm)
-    with open(fnm) as f:
-        txts = load_ted_clean(f)
-        ic(len(txts))
+def get_498_eg(section=True):
+    fnm = 'eecs498_lec03, section' if section else 'example'
+    fnm = f'../Transcription/transcripts/{fnm}.txt'
+    f = open(fnm)
+    lns = list(map(str.strip, f.readlines()))
+    return ' '.join(lns)
 
-        txt = ' '.join(txts)
-        n_words = len(txt.split())
-        ic(n_words)
-        # ic(txt[:500])
-        ic(txt)
+
+if __name__ == '__main__':
+    # fnms = glob.glob('**/*.txt', recursive=True)
+    # ic(fnms)
+    # fnm = list(filter(lambda x: 'cleaned' in x, fnms))[0]
+    # ic(fnm)
+    # with open(fnm) as f:
+    #     txts = load_ted_clean(f)
+    #     ic(len(txts))
+    #
+    #     txt = ' '.join(txts)
+    #     n_words = len(txt.split())
+    #     ic(n_words)
+    #     ic(txt[:500])
+    #     # ic(txt)
+
+    txt = get_498_eg()
+    ic(len(txt.split()))
