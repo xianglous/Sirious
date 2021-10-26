@@ -142,3 +142,12 @@ cython_debug/
 
 # credential
 cert/
+
+# JetBrains
+.idea/
+
+# macOS
+.DS_Store
+
+# Google Cloud
+service-account-key.json
