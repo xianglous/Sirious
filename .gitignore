@@ -149,3 +149,5 @@ cert/
 # macOS
 .DS_Store
 
+# Google Cloud
+service-account-key.json

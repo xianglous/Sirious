@@ -34,6 +34,9 @@ def load_ted_clean(fl):
 def get_ted_eg(crop=True):
     """
     3310 words in the text, doesn't fit in most traditional models
+
+    [Does School Kill Creativity?](https://www.ted.com/talks/sir_ken_robinson_do_schools_kill_creativity)
+    by Sir Ken Robinson
     """
     FNM = 'data/example/ted_does-schools-kill-creativity, cleaned.txt'
     with open(FNM) as f:
