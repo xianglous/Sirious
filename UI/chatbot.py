@@ -10,13 +10,17 @@ class MainWindow(QtWidgets.QMainWindow):
         self.lecture_dropdown = LectureDropdown()
         self.lecture_dropdown.setFocus()
         self.chat_input = ChatInput(self.chat_widget, self.lecture_dropdown)
+        self.microphone_button = AudioButton(self.chat_widget, self.lecture_dropdown)
         central_widget = QWidget()
-        hbox = QVBoxLayout()
-        hbox.addWidget(self.lecture_dropdown)
-        hbox.addWidget(self.chat_widget)
-        hbox.addWidget(self.chat_input)
+        vbox = QVBoxLayout()
+        input_hbox = QHBoxLayout()
+        input_hbox.addWidget(self.chat_input)
+        input_hbox.addWidget(self.microphone_button)
+        vbox.addWidget(self.lecture_dropdown)
+        vbox.addWidget(self.chat_widget)
+        vbox.addLayout(input_hbox)
         
-        central_widget.setLayout(hbox)
+        central_widget.setLayout(vbox)
         self.setCentralWidget(central_widget)
 
 
