@@ -6,7 +6,7 @@ def get_transcript():
         data = json.load(json_file)
     for line in data["transcription"]:
         transcript.append(line['transcript'])
-    with open('transcripts/example.txt', 'w') as f:
+    with open('transcripts/eecs498_lec03.txt', 'w') as f:
         f.write('\n'.join(transcript))
     
 def get_speaker_transcript():
