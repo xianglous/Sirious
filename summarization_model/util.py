@@ -1,5 +1,7 @@
 import re
 import glob
+import json
+
 from icecream import ic
 
 
@@ -10,9 +12,9 @@ def is_mmss(s):
     return re.match(r'^\d\d:\d\d$', s)
 
 
-def get_1st_n_words(text, n=2**10):
-    words = text.split()
-    return ' '.join(words[:n])
+def get_1st_n_words(text, n=None, as_arr=False):
+    words = text.split()[:n]
+    return words if as_arr else ' '.join(words)
 
 
 def load_ted_clean(fl):
@@ -31,19 +33,29 @@ def load_ted_clean(fl):
     return lns
 
 
-def get_ted_eg(crop=True):
+def get_ted_eg(k='Do schools kill creativity'):
     """
-    3310 words in the text, doesn't fit in most traditional models
-
-    [Does School Kill Creativity?](https://www.ted.com/talks/sir_ken_robinson_do_schools_kill_creativity)
-    by Sir Ken Robinson
+    Talks in ~20min comes with ~3k tokens, already don't fit in most traditional models
+    
+    :return: `dict` about a TED talk
     """
-    FNM = 'data/example/ted_does-schools-kill-creativity, cleaned.txt'
-    with open(FNM) as f:
-        return ' '.join(load_ted_clean(f))
+    # fnm = 'data/example/ted_does-schools-kill-creativity, cleaned.txt'
+    # with open(fnm) as f:
+    #     return ' '.join(load_ted_clean(f))
+    if not hasattr(get_ted_eg, 'dset'):
+        with open(f'dataset/ted-summaries.json') as f:
+            get_ted_eg.dset = json.load(f)
+    if k:
+        if type(k) is int:
+            return get_ted_eg.dset[k]
+        else:  # Expect str
+            # ic(list(filter(lambda d: k in d['title'], get_ted_eg.dset)))
+            return next(filter(lambda d: k in d['title'], get_ted_eg.dset))
+    else:
+        return get_ted_eg.dset
 
 
-def get_498_eg(section=True, cleaned=True):
+def get_498_eg(section=False, cleaned=True):
     d = '../Transcription/transcripts'
     fnm = f'eecs498_lec03{", cleaned" if cleaned else ""}{", section" if section else ""}'
     fnm = f'{d}/{fnm}.txt'
@@ -66,6 +78,7 @@ if __name__ == '__main__':
     #     ic(n_words)
     #     ic(txt[:500])
     #     # ic(txt)
+    ic(get_ted_eg())
 
     txt = get_498_eg()
     ic(len(txt.split()))
