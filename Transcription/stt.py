@@ -1,6 +1,8 @@
 import json
-from google.cloud import speech
 import os
+
+from google.cloud import speech
+from icecream import ic
 
 
 def transcribe():
@@ -93,9 +95,28 @@ def s2t(gcs_uri):
         json.dump(dict(transcription=output), f, indent=4)
 
 
+def trans_json2str(fnm):
+    with open(fnm, 'r') as f:
+        s = json.load(f)['transcription']
+        s = [e['transcript'] for e in s]
+        s = ''.join(s)
+        ic(s[:200])
+        s = s.split('.')
+        s = [s_[1:] if s_ and s_[0] == ' ' else s_ for s_ in s]
+        ic(s[:10])
+        return '. \n'.join(s)
+
+
 def main():
     # transcribe()
-    s2t('gs://sirious_audio/Example.flac')
+    # s2t('gs://sirious_audio/Example.flac')
+
+    s = trans_json2str('transcripts/output, with punc.json')
+    ic(len(s.split()))
+    fnm = 'transcripts/eecs498_lec03, cleaned.txt'
+    open(fnm, 'a').close()  # Create file in OS
+    with open(fnm, 'w') as f:
+        f.write(s)
 
 
 if __name__ == "__main__":

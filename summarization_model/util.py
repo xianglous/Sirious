@@ -43,9 +43,10 @@ def get_ted_eg(crop=True):
         return ' '.join(load_ted_clean(f))
 
 
-def get_498_eg(section=True):
-    fnm = 'eecs498_lec03, section' if section else 'example'
-    fnm = f'../Transcription/transcripts/{fnm}.txt'
+def get_498_eg(section=True, cleaned=True):
+    d = '../Transcription/transcripts'
+    fnm = f'eecs498_lec03{", cleaned" if cleaned else ""}{", section" if section else ""}'
+    fnm = f'{d}/{fnm}.txt'
     f = open(fnm)
     lns = list(map(str.strip, f.readlines()))
     return ' '.join(lns)
