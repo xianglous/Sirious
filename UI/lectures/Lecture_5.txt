@@ -112,7 +112,7 @@ Okay.
 So does everyone remember where we left off last time?
 Good. The three flies that are supposed to paid you back in, but this is the most important one.
 This is really what a standard.
-Typical feed-forward neural network. Looks like you've got an input layer. This is where your data touches the model. Then you have a hidden lair.
+Typical feed-forward neural network. Looks like you've got an input layer. This is where your data touches the model. Then you have a hidden layer.
 These are weights which each one of these lines represent interact with your summons. Squash that happens in each neuron, write your activation function. And then the signal goes onto the following layer in this case is just three until you have your output after one of those summoned. Squashes, what happens with those summoned splashes is that the strength of the signal that propagates is determined. I think that was a key point that may I made out of emphasize enough, the human brain and so far as when your neurons fire.
 The strength of that firing is what?
 Have bearing on whether or not the next neuron in the chain fires, and the next neuron in the chain fires, and that's what's being achieved with that's in here. And then the weights and the mapping it to a line to what the output value looks like, will determine how things are magnified, or
@@ -203,7 +203,7 @@ I'm not the symbol this a sibo formulation to get the knowledge in here. I'm goi
 I'm going to randomly replace a word in the sentence. And I'm going to train this model to predict which word was randomly changed. That was the Burt Innovation. That was one of them birthday to things that didn't add up the masking, which is I'm going to randomly change the word and I'm going to let you predict what it is.
 I'd like the problem.
 Prim's knowledge in here in a few. Crazy. You'll see it will look at it deeply and then it's another picture of the same stuff. You've got that one hot and coating. Of course, this in the simplified cases like 500.
-500 100. Then there's only one one in. It is crazy. I know you train it so that you get the fat as the output. And then this hidden Lair, is what this is, your embeddings.
+500 100. Then there's only one one in. It is crazy. I know you train it so that you get the fat as the output. And then this hidden layer, is what this is, your embeddings.
 Which is what creates these this representation for other stuff. That's not how this stuff works for the drawbacks to 100. This, this particular way of representing language, one hot and coding does drawbacks input backers are large island is out of vocabulary. So if there's like a new word like LMFAO or whatever, right? And you see it in your texts, you may not have a thin coating for you. Can't really utilize it and see what they do is they just inject unknown.
 For where is it doesn't see? And then it has an incoming phone on. This is a little weird but not the drawback in the knowledge, that one hot and coding can get
 Right under the Regatta. This is actually really important. There's no relationship. Like like there's no relationship between the word and the number. The number is just
