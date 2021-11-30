@@ -111,33 +111,38 @@ class DocCutter:
                 return split(chunk[:idx]), split(chunk[idx:])
 
         idxs = split(list(range(len(sents))))  # Essentially a binary tree
-        return
+
+        def expand():
+            lst = []
+
+            def _expand(idxs_):
+                if isinstance(idxs_, list):
+                    lst.append(idxs_)
+                else:
+                    l, r = idxs_
+                    _expand(l)
+                    _expand(r)
+            _expand(idxs)
+            return lst
+        idxs = expand()
+        ic(idxs)
+        assert all(d >= 1 for d in np.diff([e[0] for e in idxs]))  # Strictly increasing first index
+        return [' '.join(sents[idx] for idx in idxs_) for idxs_ in idxs]
 
 
 if __name__ == '__main__':
-    # from icecream import ic
-    #
-    # dc = DocCutter()
-    # t = get_ted_eg('Cuddy')['transcript']
-    # t = ' '.join(tokenize.sent_tokenize(t)[:15])  # Get a smaller sample
-    # # t = get_498_eg()
-    # # ic(t[:400])
+    from icecream import ic
+
+    dc = DocCutter()
+    t = get_ted_eg('Cuddy')['transcript']
+    # ids_ = ([0], ((([1, 2, 3, 4, 5, 6, 7], [8, 9]), [10]), [11, 12, 13, 14]))
+    t = ' '.join(tokenize.sent_tokenize(t)[:15])  # Get a smaller sample
+    ic(dc(t, max_sz=128))
+
+    # t = get_498_eg()
+    # ic(t[:400])
     # ic(tokenize.sent_tokenize(t))
-    # ic(dc(t, max_sz=128))
+    # ic(dc(t))
 
-    ids_ = ([0], ((([1, 2, 3, 4, 5, 6, 7], [8, 9]), [10]), [11, 12, 13, 14]))
 
-    def expand(idxs):
-        lst = []
-
-        def _expand(idxs_):
-            if isinstance(idxs_, list):
-                lst.append(idxs_)
-            else:
-                l, r = idxs_
-                _expand(l)
-                _expand(r)
-        _expand(idxs)
-        return lst
-    ic(expand(ids_))
 
