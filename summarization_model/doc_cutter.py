@@ -1,10 +1,9 @@
+from warnings import warn
+
 import numpy as np
 from scipy import spatial
 from sentence_transformers import SentenceTransformer
 from nltk import tokenize
-from transformers import GPT2TokenizerFast
-
-from util import *
 
 
 class DocCutter:
@@ -16,7 +15,7 @@ class DocCutter:
     def __init__(self):
         self.d_models = {}
 
-    def __call__(self, txt: str, method='all-MiniLM-L6-v2', max_sz=2**8, n_counter=None):
+    def __call__(self, txt: str, method='all-MiniLM-L6-v2', max_sz=2**8, n_counter=None) -> list[str]:
         """
         :param txt: Text to cut into segments
         :param method: A sentence transformer name
@@ -27,6 +26,7 @@ class DocCutter:
         if method not in self.d_models:
             self.d_models[method] = SentenceTransformer(method)
         if n_counter is None:
+            from transformers import GPT2TokenizerFast
             tokenizer = GPT2TokenizerFast.from_pretrained('gpt2')
 
             def counter(x):
@@ -79,7 +79,12 @@ class DocCutter:
             np.testing.assert_array_equal(np.array(chunk), np.arange(chunk[0], chunk[-1]+1))
             if sum(n_counter(sents[idx]) for idx in chunk) <= max_sz:
                 return chunk
+            elif len(chunk) == 1:
+                warn(f'Sentence #{chunk[0]} has more than {max_sz} - returned as a single sentence')
+                return chunk
             else:
+                # if len(range(1, len(chunk))) == 0:
+                #     ic(chunk, [sents[idx] for idx in chunk])
                 sim_scores = {idx: sim(idx) for idx in range(1, len(chunk))}
                 idx = max(sim_scores, key=sim_scores.get)  # Pick split point with smallest similarity
                 return split(chunk[:idx]), split(chunk[idx:])
@@ -107,18 +112,24 @@ class DocCutter:
 
 
 if __name__ == '__main__':
+    import os
+
     from icecream import ic
+
+    from util import *
 
     dc = DocCutter()
     # t = get_ted_eg('Cuddy')['transcript']
     # t = ' '.join(tokenize.sent_tokenize(t)[:15])  # Get a smaller sample
     # ic(dc(t, max_sz=128))
 
-    t = get_ted_eg('Cuddy')['transcript']
-    ic(dc(t))
+    # t = get_ted_eg('Cuddy')['transcript']
+    # ic(dc(t))
 
     # t = get_498_eg()
     # ic(t[:400])
-    # ic(tokenize.sent_tokenize(t))
     # ic(dc(t))
 
+    t = get_ui_eg(2)
+    # ic(t)
+    ic(dc(t))

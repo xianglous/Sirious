@@ -1,3 +1,4 @@
+import os
 import re
 import json
 from typing import Union
@@ -82,9 +83,19 @@ def get_498_eg(section=False):
     return ' '.join(lns)
 
 
+def get_ui_eg(k=1):
+    d = os.path.join('..', 'UI', 'lectures')
+    fnm = f'Lecture_{k}.txt'
+    with open(f'{d}/{fnm}', 'r') as f:
+        lns = list(map(str.strip, f.readlines()))
+        return ' '.join(lns)
+
+
 if __name__ == '__main__':
     # ic(get_ted_eg())
-    print(get_ted_eg('Cuddy')['transcript'])
+    # print(get_ted_eg('Cuddy')['transcript'])
+    #
+    # txt = get_498_eg()
+    # ic(len(txt.split()))
 
-    txt = get_498_eg()
-    ic(len(txt.split()))
+    ic(get_ui_eg(2))
