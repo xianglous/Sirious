@@ -56,7 +56,7 @@ def get_ted_eg(k='Do schools kill creativity', clean=True):
     def _ted_eg():
         if k:
             if k == 'Cuddy':
-                with open('data-eg/Amy Cuddy: Your body language may shape who you are.json') as f:
+                with open('data-eg/Amy-Cuddy_Your-body-language-may-shape-who you-are.json') as f:
                     return json.load(f)
             elif type(k) is int:
                 return get_ted_eg.dset[k]
