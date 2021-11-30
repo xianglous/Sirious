@@ -65,7 +65,6 @@ def get_ted_eg(k='Do schools kill creativity', clean=True):
         else:
             return get_ted_eg.dset
     ret = _ted_eg()
-    # ic(ret)
     return (
         (clean and isinstance(ret, list) and [clean_ted(t) for t in ret]) or
         (clean and isinstance(ret, dict) and clean_ted(ret)) or
