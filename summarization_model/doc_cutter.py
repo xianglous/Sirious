@@ -40,14 +40,6 @@ class DocCutter:
         model = self.d_models[method]
         vec_sents = np.vstack([model.encode(sent) for sent in sents])
         n = len(sents)
-        # sims_vec = np.empty((n, n), vec_sents.dtype)  # Similarity score for each pair
-        # sims_vec = {
-        #     (i, j): spatial.distance.cosine(vec_sents[i], vec_sents[j]) for i in range(n-1) for j in range(i+1, n)
-        # }
-        # ic(sims_vec)
-
-        ic(type(vec_sents), vec_sents.shape, vec_sents[0].shape)
-        # exit(1)
 
         def split(chunk: list[int]):
             """
@@ -76,41 +68,25 @@ class DocCutter:
                 if k not in _vect.memo:
                     _vect.memo[k] = spatial.distance.cosine(vec_sents[i], vec_sents[j])
                 return _vect.memo[k]
-                # vecs1 = vec_sents[chunk[:idx]]
-                # vecs2 = vec_sents[chunk[idx:]]
-                # ic(vecs1.shape[0], vecs2.shape[0])
-                # vecs_l, vecs_s = (vecs1, vecs2) if vecs1.shape[0] > vecs2.shape[0] else (vecs2, vecs1)
-                # return
 
             def sim(idx):
                 c1 = chunk[:idx]
                 c2 = chunk[idx:]
-                # ic(c1, c2)
                 assert len(c1) >= 1 and len(c2) >= 1
                 sims = np.array([_sim(i, j) for i in c1 for j in c2])
-                # return sum() / (len(c1) * len(c2))
-                # ic(sims, sims.mean(), np.min(sims), np.max(sims))
-                # return np.min(sims)
                 return sims.mean()
 
-            # ic(np.diff(chunk))
             np.testing.assert_array_equal(np.array(chunk), np.arange(chunk[0], chunk[-1]+1))
-            # if sum(n_counter(sents[idx]) for idx in chunk) <= max_sz:
             if sum(n_counter(sents[idx]) for idx in chunk) <= max_sz:
                 return chunk
             else:
-                # sim_scores = {  # Higher cosine similarity = Lower cosine distance
-                #     i: spatial.distance.cosine(_vect(chunk[:i]), _vect(chunk[i:])) for i in range(1, len(chunk))
-                # }
-                # idx = max(sim_scores, key=sim_scores.get)  # Pick split point with smallest similarity
-                # ic(sim_scores, idx)
-                # ic(_vect([1, 2, 3]))
                 sim_scores = {idx: sim(idx) for idx in range(1, len(chunk))}
                 idx = max(sim_scores, key=sim_scores.get)  # Pick split point with smallest similarity
-                # ic(sim_scores, idx)
                 return split(chunk[:idx]), split(chunk[idx:])
 
-        idxs = split(list(range(len(sents))))  # Essentially a binary tree
+        # Essentially a binary tree
+        # e.g. ([0], ((([1, 2, 3, 4, 5, 6, 7], [8, 9]), [10]), [11, 12, 13, 14]))
+        idxs = split(list(range(len(sents))))
 
         def expand():
             lst = []
@@ -125,7 +101,7 @@ class DocCutter:
             _expand(idxs)
             return lst
         idxs = expand()
-        ic(idxs)
+        # ic(idxs)
         assert all(d >= 1 for d in np.diff([e[0] for e in idxs]))  # Strictly increasing first index
         return [' '.join(sents[idx] for idx in idxs_) for idxs_ in idxs]
 
@@ -134,15 +110,15 @@ if __name__ == '__main__':
     from icecream import ic
 
     dc = DocCutter()
+    # t = get_ted_eg('Cuddy')['transcript']
+    # t = ' '.join(tokenize.sent_tokenize(t)[:15])  # Get a smaller sample
+    # ic(dc(t, max_sz=128))
+
     t = get_ted_eg('Cuddy')['transcript']
-    # ids_ = ([0], ((([1, 2, 3, 4, 5, 6, 7], [8, 9]), [10]), [11, 12, 13, 14]))
-    t = ' '.join(tokenize.sent_tokenize(t)[:15])  # Get a smaller sample
-    ic(dc(t, max_sz=128))
+    ic(dc(t))
 
     # t = get_498_eg()
     # ic(t[:400])
     # ic(tokenize.sent_tokenize(t))
     # ic(dc(t))
-
-
 
