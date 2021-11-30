@@ -1,5 +1,7 @@
 import re
-import glob
+import json
+from typing import Union
+
 from icecream import ic
 
 
@@ -10,62 +12,79 @@ def is_mmss(s):
     return re.match(r'^\d\d:\d\d$', s)
 
 
-def get_1st_n_words(text, n=2**10):
-    words = text.split()
-    return ' '.join(words[:n])
+def get_1st_n_words(text, n=None, as_arr=False):
+    words = text.split()[:n]
+    return words if as_arr else ' '.join(words)
 
 
-def load_ted_clean(fl):
+# def load_ted_clean(fl):
+#     """
+#     :param fl: An opened file
+#     :return: Array of strings, The complete speech text
+#     """
+#     def _content_relevant(x):
+#         return not (x.startswith('(Laughter)') or is_mmss(x))
+#
+#     lns = list(map(str.strip, fl.readlines()))
+#     lns = list(filter(str.strip, lns))
+#     lns = list(filter(bool, lns))
+#     lns = list(filter(_content_relevant, lns))
+#     lns = [ln.removeprefix('(Audience)') for ln in lns]
+#     return lns
+
+def clean_ted(ted: Union[dict, str]):
+    def _clean_ted(s):
+        return re.sub(r'\((Laughter|Audience|Applause)\)', '', s)
+    if isinstance(ted, dict):
+        ted['transcript'] = _clean_ted(ted['transcript'])
+        return ted
+    else:
+        assert isinstance(ted, str)
+        return _clean_ted(ted)
+
+
+def get_ted_eg(k='Do schools kill creativity', clean=True):
     """
-    :param fl: An opened file
-    :return: Array of strings, The complete speech text
+    Talks in ~20min comes with ~3k tokens, already don't fit in most traditional models
+    
+    :return: `dict` about a TED talk
     """
-    def _content_relevant(x):
-        return not (x.startswith('(Laughter)') or is_mmss(x))
+    if not hasattr(get_ted_eg, 'dset'):
+        with open(f'dataset/ted-summaries.json') as f:
+            get_ted_eg.dset = json.load(f)
 
-    lns = list(map(str.strip, fl.readlines()))
-    lns = list(filter(str.strip, lns))
-    lns = list(filter(bool, lns))
-    lns = list(filter(_content_relevant, lns))
-    lns = [ln.removeprefix('(Audience)') for ln in lns]
-    return lns
+    def _ted_eg():
+        if k:
+            if k == 'Cuddy':
+                with open('data-eg/Amy Cuddy: Your body language may shape who you are.json') as f:
+                    return json.load(f)
+            elif type(k) is int:
+                return get_ted_eg.dset[k]
+            else:  # Expect str
+                return next(filter(lambda d: k in d['title'], get_ted_eg.dset))
+        else:
+            return get_ted_eg.dset
+    ret = _ted_eg()
+    return (
+        (clean and isinstance(ret, list) and [clean_ted(t) for t in ret]) or
+        (clean and isinstance(ret, dict) and clean_ted(ret)) or
+        (not clean and ret)
+    )
 
 
-def get_ted_eg(crop=True):
-    """
-    3310 words in the text, doesn't fit in most traditional models
-
-    [Does School Kill Creativity?](https://www.ted.com/talks/sir_ken_robinson_do_schools_kill_creativity)
-    by Sir Ken Robinson
-    """
-    FNM = 'data/example/ted_does-schools-kill-creativity, cleaned.txt'
-    with open(FNM) as f:
-        return ' '.join(load_ted_clean(f))
-
-
-def get_498_eg(section=True, cleaned=True):
+def get_498_eg(section=False):
     d = '../Transcription/transcripts'
-    fnm = f'eecs498_lec03{", cleaned" if cleaned else ""}{", section" if section else ""}'
-    fnm = f'{d}/{fnm}.txt'
-    f = open(fnm)
+    fnm = 'eecs498_lec03'
+    if section:
+        fnm = f'{fnm}, section'
+    f = open(f'{d}/{fnm}.txt', 'r')
     lns = list(map(str.strip, f.readlines()))
     return ' '.join(lns)
 
 
 if __name__ == '__main__':
-    # fnms = glob.glob('**/*.txt', recursive=True)
-    # ic(fnms)
-    # fnm = list(filter(lambda x: 'cleaned' in x, fnms))[0]
-    # ic(fnm)
-    # with open(fnm) as f:
-    #     txts = load_ted_clean(f)
-    #     ic(len(txts))
-    #
-    #     txt = ' '.join(txts)
-    #     n_words = len(txt.split())
-    #     ic(n_words)
-    #     ic(txt[:500])
-    #     # ic(txt)
+    # ic(get_ted_eg())
+    print(get_ted_eg('Cuddy')['transcript'])
 
     txt = get_498_eg()
     ic(len(txt.split()))

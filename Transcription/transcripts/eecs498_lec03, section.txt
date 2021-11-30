@@ -1,149 +1,242 @@
- good the three flies that are supposed to paid you back in but this is the most important one
- this is really what a standard
- typical feed-forward neural network looks like you've got an input layer this is where your data touches the model then you have a hidden lair
- these are weights which each one of these lines represent interact with your summons squash that happens in each neuron write your activation function and then the signal goes onto the following layer in this case is just three until you have your output after one of those summoned squashes what happens with those summoned splashes is that the strength of the signal that propagates is determined I think that was a key point that may I made out of emphasize enough the human brain and so far as when your neurons fire
- the strength of that firing is what
- have bearing on whether or not the next neuron in the chain fires and the next neuron in the chain fires and that's what's being achieved with that's in here and then the weights and the mapping it to a line to what the output value looks like will determine how things are magnified or
- not magnified at each layer and the likeliness of the firing is where the knowledge is encapsulated much like our brain our knowledge is encapsulated in the likeliness neurons some combination of neurons will fire and some combination of firing is where the concept of an apple lives in your brain
- and that's what we're trying to capture in this bring the concept of a 5
- 125 looks like lives in the likeliness that signals are sent through the final signals that come out a signal that comes out it's right
- and if it's if you put a 5 in an f45 doesn't come out it's wrong
- all right and permuting
- the weights were changing the values of the parameters which are like weights excetera in this model weights and biases in this model so that we get the fire we want with the day that we know about
- awesome any questions on neural networks
- all right
- so one of the big questions Venice how how do we represent numbers represent language as numbers right cuz it's a picture I got pixels this is grayscale so even nicer every single Pixel is a member so that's what I'm going to run through my neural network words
- well let's talk about how we represent words
- do some basic terms for the next few slides in facts about this the allowable structures in the language semantics of the meaning the meaning of what the what the sequence of words and code is important it's a feature ization that uses a vector of word counts ignoring order that is if I look in a sentence I'm going to create a way to view that sentence like a bag of words just jumbled up I'm not going to care about the sequences of the world which seems silly but it seems silly because I use this example a lot I'm like if you go to McDonald's and you're like talking to the nurse and they're like
- with cheeseburger no ketchup with ketchup no cheese burger same words a bag of words model is going to look at that as the same thing but the semantics are wildly different so that's a little anecdote to illustrate what might be lost with backwards but bag of words is a very common
- way to Catherine will look at what it looks like a gram is sequences so this is actually two addresses backwards thing so you looking at in the bag of
- sequences so I will look at what that looks like so that means I'll take if you have a two or three bucks each other or the combination of three words like there's a problem
- so how do we look at what is bag of words
- is every word in the language can have a ID
- so if you were to put that in an array let's say English is most have like 500 thousand words or something
- pregnant from wrong. Just being a real 500,000 Elementary not a real every number number two in a Terrain my top and be the work orange so you can represent all of the words in the language of the Giant
- mapping of word to ID large
- so when you do that here's what it looks like
- you'll have a sentence the cat sat on the map right now that we have our 5000
- element Factor on every of those words has an ID in the vector or a location you guys think of the index as an ID for this example and then you just see a sequence of IDs
- so you can just map words you can get a string of words and then just see a sequence of ideas when you use this
- dictionary base bag of words approach
- so this is how we bag of words in so you can take
- the sentence right and then
- in your vector that is the size of 500,000 you have a vector to represent the sentence
- so the whole whatever sentence you have you have a 500000 Factor
- that has a count of
- how many of that word appears so if your first element is duh
- you'll have two of them right I meant cat you have one cat 0001 that one on and then one more so here you can you can represent that sentence or any sentence or any string of tax would have 500,000 word Vector 500,000 element Vector where the position and Vector that corresponds to the word just has a count of how many words are present in your bag
- duffle bag of words
- feature ization so you would just store it like every word idea how many there are for the ones that have weird ideas right there's a lot of details what I'm presenting here is the journey that gets us to
- how we do it today right this is just some of the foundational pieces you can have a bag of words way of capturing the a piece of text where you're just counting the occurrence of each word in that text and you're representing it as a sparse Vector in this case or as a
- now with that you can do the same with any grams right because you don't like to lose the ordering
- so an engram is
- we're going to instead of using each word has an ID you can say each combination of word
- has an ID right
- so the cat has one element has another element on the map right that's a two
- so you have a much bigger Factor because you're doing
- then you have a unique ID for every
- purple of words that come in a sequence of the combination but whenever you see an engram with an being tour ending 3 and you always see it like less than five that's because of the complexity that comes when you have large end you can represent it this is what that representation means okay so that bag of words
- backwards and engrams okay now you can do all kinds of cool stuff you represent your sentence you can actually do a combination as a representation because then that combination and codes a little bit more information right not only do you see what words are in there but you can kind of see the two grams in there under three grand I didn't you can actually have more complex more beefy ways to represent that text until this is this is how you'll see whenever you see engrams or bag of words in literature that's what they're talking about it's a way of representing things
- with those kinds of those kinds of representations one gram backwards and I can see that I have 17 Fantasticks and one terrible in there the neural network and say all day and probably a very happy happy face but if I see the opposite 17 Terrible's and one fantastic then the morgue to use the encoding and a problem is if you say something like
- this is why you need to Gramps if you say this is stupid Lisa and this is stupidly fantastic or you can say this is stupid right you might need that too because that's just one one it'll say it's neutral but it's actually one way or the other
- so so that's so we're just talking about that topic taking words and representing it in a way that a model can understand it in the useful way
- yeah okay follow the power law of course right so that means that this can be much more common to grams and rare or two grams you're going to see in a sentence
- I don't know like
- bicycle
- Newtonian physics why you're not going to see that so that's a tree that will never appear right and there's actually way more three grams that will never appear in the language than there are three friends that will appear in the language so luckily you don't have to store all of it is getting into those things right and so I cut this short because honestly not you know what it is how many people feel like they know what a bag of words in a engram is feel you.
- by the way just count the occurrences of unique words in your sentence and an engram count the unique and combos of words in your sentence into a numerical representation that you can use in a model to train it
- in a very basic this is basic thing that we can actually do with deep learning this is like where it started and actually the first paper you're going to read this right now because it's called one hot encoding so instead of looking at it as integers just think of it as binary right so essentially
- you take the sentence and then you turn each word into their
- vector and then you have a sequence of those factors right man bites dog let's say this is your whole vocabulary your whole language not a very expressive language but that's all the words in the language than that distance looks like this sequence so you have three vectors a vector for each sentence and it's dog One Bites to man The Third
- and it's not see a picture from the first paper
- there's something called this is an example of how it goes through a network okay so we're going to talk about this not work later but I'm just going to share an example in coding
- then you can take the sequence word T-minus 1 TV in the word you're on
- spell the word you're on you can take two words before it into words after it
- and you can run those as an input it's a window of for right well window size to 2 before 2 after you take those words these four words
- continuous bag of words what it does is it predicts what word should be in the middle of your sequence of words spring pool problem
- there's so much to talk about this like I can get off track what I'm just trying to show you but what I'm trying to show you is
- you're one hot and cold your words go in as those vectors would have one on which word it is I'm done you can train a neural not not work to do something useful so the word that comes out is going to be also add one hot encoding that encodes the predicted word right so see if I was a problem of taking those windows of the cat on floor and predicting what's that middle word self esteem by works on
- I'm so when those words go in you've got some news on that work learning that's going to Output the encoding for sat right
- is that
- clear
- all right this is a cool model of the reason why I'm going to die because they decide I don't have to get a whole bunch of forwards and then label the right where to go in in the middle I can literally just say take this structure and go read Wikipedia because I've got an incredible amount of sequence real language that in an unsupervised way I can just March along the the text I need to just look at the words and saying all these are the two of them that's the middle and it's training itself to predict that right so that works in in length in language and it's actually incredibly powerful
- oh yeah yeah don't totally totally do supervised learning means
- if I would do it if I was going to take this model in training and supervised way
- Imma have to prepare a dataset I might have to go and create one and an established truth and I would have an expert would have to do that so I'll supervise person would have to do that or would have to do that I didn't give it to date it's laborious right cuz
- did the Bronx with those two what what it should predict as a little more crap so and the prediction I'll put I'll just have to give it examples and if you have to manually do that then it's supervised learning but if you could just let a model if you can configure a model in such a way that I can just go look at unstructured data and learn on its own they call them unsupervised learning so
- yeah yeah so what did end up learning is in this particular case and then I'll talk about Superman Spider-Man but in this particular case what it's learning is
- the ability to predict the output the one hot and coding for the word that should be in the middle of those inputs right so it sees this as the input in the wild right when you want to listen to Cheese's and put on it's making a prediction as to what's the word that should be in the middle
- and that means that when these numbers go in and just to be 1000 11001 excetera when those numbers go in the way the weights are configured and wavy activation function work in the weights here it'll output 101 which is that right so we actually need to get this not work to have knowledge we actually going to cost us of all these so that we get the thing that we want out here that there's right I'm in getting it to do that
- it doesn't do do it like crazy ways like that's where it's a learned model which is which is so cool
- a lot of folks don't understand really why that works on how they don't understand the parameters of the limits to how much that can work and it's not a deterministic thing that we can do you write me measure how well it works that's my machine learning so empirical it such an empirical science cuz somebody might change a rule
- do if someone said that they would know if it's better or worse unless it's Friday and that's a dozen very kind of beautiful thing about this discovery but yeah that's the explanation and soul
- in the pixel landscape let's think of the pixel example supervised learning is I got to go get pictures of Batman and Superman and then I'm going to give it to the model
- right and then I'll tell it that and then I expect the model to be able to see and recognize he will enter Batman
- that's a supervisor training an unsupervised approach if you if one could be constructed is I never given any data I just set it up and I say go off into the world and learn you know into this world and learn what to run by my looks like a man
- I'm indeed I'm not aware of any image classification models that learn in an unsupervised way I'm not familiar with it no actually I am but that would be don't get on supervised mean and I thought I was right now on unsupervised way to train an image model would be to say go read all the web pages on the internet and I'm going to let you assume that the text around the images correspond to the images and I will get on supervised mean so I don't have to go and prepare a dataset I'm just going to let this model go and read the internet and then it should come back and say I can recognize a fats and dogs and planes because I'm not the internet and I looked at the image and then I looked at the text around it and I built a representation of that and now I'm good at that so that would be a good example of an unsupervised
- shredded papers about it like check it out
- nobody know but two that's one I'm here to talk about this because it's so it's so crazy so this is one and this is our first day for it's worth of that and that's actually be paper that changed our world from a commercial standpoint where to buy for the first Juggernaut that was like just the way we should be doing natural language processing so we talk about ideas how to train these models in this way and I made a big splash but it turns out the hunting setup
- the Stuck in the Middle hear that you get after you train it on this problem and the being really useful for other things right I'm going to look at how you can translate the learning the new problems and it's super smart and the new problem we're going to look at it you know if you take King Midas Queen you got Prince or something like you do math on birds like you could subtract will get there but the knowledge in here becomes really useful for a whole bunch of other things and I don't feel we're going to talk about that
- I'm not the symbol this a sibo formulation to get the knowledge in here I'm going to cram knowledge in the middle by training it to solve this problem you can set up other problems other models right so you can say you know what model I want you to look at the sentence and then predict the next sentence it's a different one and it's a different construction to Primm model into the knowledge into the model with a different problem solving it's using the same day to sight in a different way I'm in Maine create more knowledge or less knowledge 21 is I'm going to take a model like this and I want to take sentences of randomly randomize a word
- I'm going to randomly replace a word in the sentence and I'm going to train this model to predict which word was randomly changed that was the Burt Innovation that was one of them birthday to things that didn't add up the masking which is I'm going to randomly change the word and I'm going to let you predict what it is
- I'd like the problem
- prim's knowledge in here in a few. Crazy you'll see it will look at it deeply and then it's another picture of the same stuff you've got that one hot and coating of course this in the simplified cases like 500
- 500 100 then there's only one one in it is crazy I know you train it so that you get the fat as the output and then this hidden Lair is what this is your embeddings
- which is what creates these this representation for other stuff that's not how this stuff works for the drawbacks to 100 this this particular way of representing language one hot and coding does drawbacks input backers are large island is out of vocabulary so if there's like a new word like LMFAO or whatever right and you see it in your texts you may not have a thin coating for you can't really utilize it and see what they do is they just inject unknown
- for where is it doesn't see and then it has an incoming phone on this is a little weird but not the drawback in the knowledge that one hot and coding can get
- right under the Regatta this is actually really important there's no relationship like like there's no relationship between the word and the number the number is just
- in your array whichever one of those bits are hot right or 1 I know you know you might have a 1
- at the first number that and that could be like cat and then as to never give your refrigerator and there's like no relationship between the encoding so that's a drawback and we're going to look at what happens when you can get richer
- representations because actually what we'll end up doing is using the product of hidden layers to be the representation which creates this magical stuff that we're going to work and back paper
- so ideally we want relation between word back to us or a flag relation between words and features of word of word embeddings to reflect features of words so you want to be able to if you can have a way like we have that in the English language a good way to describe this is actually don't think of a good way
- okay like like for instance a word like funk
- right there's actually a higher level it's not just a random word it's like it kind of sounds like Funk Funk so word means almost audibly what it is so there we have a higher level value to the what the structure of the word is that is helpful slam may be the number one Eureka
- I don't know where that might be really good for that
- yeah yeah yeah that's actually funny thing about sorry this is actually just kind of reiterating
- this is actually a hint right cuz you can get based on the weights
- that are coming out
- you can actually get away to represent words
- on the on the way to produce after the models trained right so you can take a hidden layers output and have that heavy layers output produce a sequence of numbers that represents the word that would be the input and then you can get something that you can do the lies and interesting ways there's a little bit of a pre pre a little hint of what's to come when we look at the stuff more deeply
- so we got a couple more minutes bear with me while I give a little preview of what the come of where we're heading right
- so
- if you were to have this representation that wasn't one hot anymore I train the model
- that takes in one hot and Coatings and outputs something that might mean something because I just crammed a bunch of knowledge in the middle of this model and now I can take advantage of whatever I traded with him let's artificial problem that captures meeting I'm just a creative this is how the researchers did and they're like I'm a creative person we got all the data I know they're just like the corn meaning of this data and cram it into a model
- I want to see what it was like you know what if I can predict the middle I don't know how they can be the model will know something if I can randomly change words and then predict which one was change name to model them know something about our language if I can predict the next time you give me a sentence from the depths that right in the middle of the mall in like know something deep about the language has a problem like that and then I get the lyrics to produce these weights to introduce this representation of a word
- now look at that dude this is one of those creative things in the on the planet that led to work of act right and that's where we're going to look at
- maybe we can get such a representation that if you were to look at the Clusters
- you would see similarities like yeah apple and orange should be close to each other and bus and Country Angels related that's interesting that you know you got the traditional bag of silliness we talked about this boring but a numerical representation that can stories word in a point of space were represented by a vector generate 300 it's on supervised
- we'll get to the math please this is yeah that's how it works but maybe you can get like interesting relationships like this represented in the space right like
- you know if you take King and subtract Coon you may get mad and if you think we need some tracking you got woman and you know you might be able to have these interesting numerical relationships expressible right like a country to its capital might have the same
- almost mathematical difference so if I if I took Spain in Madrid
- subtracted the difference between freedom and read and added it to Italy maybe I'll go close to Rome
- so I'm like so how is that subtraction I'm capturing what it is to be a capital this is just an emergency out of cramming stuff in the middle of the magic that's the crazy that's right right and all kinds of weird things with these models that just seems like like Skynet AI so you can do machine translation with those kind of methods you can do parts of speech tag in with that kind of methodology
- relationship extraction this is what we talked about it but you know big bigger Miami Florida Einstein scientist you can actually capture relationships and then infer on the analogous relationship right like you know Einstein the scientist has been going to artist right like you might as well go is kind of like what science is the thing and then you'll see what its losses for Vango you do sentiment analysis right
- within this or unsupervised way in read a bunch of texts it just read a bunch of texts no one trained in anything and he said what's a lot like that and then it's like a sad meaning sad heartbroken disheartening
- some of the stuff I may be that there was a really sad people saddens me distressing reminders bobbing interesting magic regretful Bittersweet and just told you that all that stuff is very close to sad and that's kind of cool because you didn't do anything other than said hey model go read Wikipedia and look at what the middle word is and now I know this and that's the magic of the first paper we're going to look at which is all about
- Define feeble
- doing this on Wikipedia
- call three-time Laughing. 7 Minutes questions
- I think that are for true because similar words are used in similar contact
- you might say that
- just kidding cast
- Chase's place where is dog plays Fetch and that's a wonderful question and the way the way the best answer I have in the way that I've heard people describe it is it's a multidimensional space what we've been looking at are really simplified two-dimensional kind of things right that's not too much space so
- the number of Dimensions can give you a capacity for the amount of relationships that can be captured almost right because Kevin dog might be closed as nouns and objects but maybe cat chases is closed you know like you'd expect to see a cop chase you know what I mean more than escape and so that could be captured or maybe Kat and
- I don't know cat like as a slang word to be like oh that's a cool cat I don't I don't know right like what you might need to capture that too in the one representation that the width of the dimensions that that kind of has bearing on the capacity of how much relationship you can model it's much like you can think about mapping that to a linear Dimension where is a cat to be five in a dog to be 17 you can't you can't not as many relationships between those in a low dimensional space but in high dimensional space across some Dimension you may be able to capture one relationship and it goes. It's it's kind of like so there is a capacity to how much knowledge you can capture
- another properties is how deep in the layers is the best layer to extract for your problem
- so your question is is a good one and the real answer is
- folks don't necessarily know what captured in those representations they tried some things and noticed some interesting relationships that he merge like well what's the distance of a word oh it's a movie similar given that dataset but there's actually a new kinds of realizations right like like 53 actually kind of work like this it's a different problem but it just learn some silly unrelated thing to criminologist
- they didn't know that being able to talk code like me I'm to describe code and it'll write code is a possibility and then it can also answer multiple-choice questions and then it can also generate news articles that look realistic it's like it's doing all of these other things in that model there's there's things caption that we don't fully understand and we don't even know what the bottles are in an actual because you can't measure it but this is some of the principles right you're you're capturing relationship with dimensionality and this into a relationship between the dimensions that end up mattering to write and no one knows what it is
- do you think the relationship between
- directions to me.
- I don't know something like other animals trailer
- I can write this is great that's a great question is related because it learns from the data you give it that's the key thing right so if you were to take you didn't use Wikipedia I knew used I don't know like film Scripts
- cat may not have anything to do with dogs wanted learns these relationships from that data sent so so insofar as it's not right it's it's it's whatever knowledge could be produced from the dataset given and that particular problem right that was the final word is a problem cibao is the problem so the combination of that problem Plus data Surplus capacity of the model produces the actual in learning in a deterministic way but you can change any of those variables and get weaker or stronger links across different dimensions
- so if I was to instead of use the word in the middle what if I use the next word right and I just trained the model and predicting what the next word is
- you may not get cat and dog being similar right cuz dogs might always go to fights and taught all of those scratches right so so then your dog and cat might be very different right because now cat is associated to chairs that scratch the floor and dogs are associated to babies who bite the your binky or whatever right I meant so you might get out so I can change the problem that it's using two on the same data you can get completely different representation but the middle word t-ball I would I would ask you can replace cat and dog in the middle of a sentence
- the cat ran really fast the dog ran really fast right like it's more replaceable so that one captures that nature of relationship better and it's an art form like the guy doesn't see what it produces see what useful intelligence is are produced from from these endeavours the train
- exactly
- right right that's a good point total in the paper there's two there's cibao which is predicting the middle word and then to skip ground which is taking just the word in predicting the outer words does the direct opposite let me predict the forwards next to me cuz I'm my work and a paper shows that see if it works better for the things they like but there was one or two things work better for it's just the nature of of of the problem that you give the model it'll determine what kind of hidden knowledge does the model gosh that's the best I can do to I know it's not fully satisfying you want to explain it but it's magic awesome
- I'll see you guys Wednesday
+I feel free to ask questions at any point about what's coming.
+Okay.
+So does everyone remember where we left off last time? Good.
+The three flies that are supposed to paid you back in, but this is the most important one.
+This is really what a standard.
+Typical feed-forward neural network.
+Looks like you've got an input layer.
+This is where your data touches the model.
+Then you have a hidden lair.
+These are weights which each one of these lines represent interact with your summons.
+Squash that happens in each neuron, write your activation function.
+And then the signal goes onto the following layer in this case is just three until you have your output after one of those summoned.
+Squashes, what happens with those summoned splashes is that the strength of the signal that propagates is determined.
+I think that was a key point that may I made out of emphasize enough, the human brain and so far as when your neurons fire.
+The strength of that firing is what? Have bearing on whether or not the next neuron in the chain fires, and the next neuron in the chain fires, and that's what's being achieved with that's in here.
+And then the weights and the mapping it to a line to what the output value looks like, will determine how things are magnified, or Not magnified, at each layer and the likeliness of the firing is where the knowledge is encapsulated much like our brain.
+Our knowledge is encapsulated in the likeliness neurons.
+Some combination of neurons will fire and some combination of firing is where the concept of an apple lives in your brain.
+And that's what we're trying to capture in this.
+Bring the concept of a 5.
+125 looks like lives in the likeliness that signals are sent through the final signals that come out a signal that comes out.
+It's right.
+And if it's if you put a 5 in an f45 doesn't come out, it's wrong.
+All right, and permuting.
+The weights were changing the values of the parameters, which are like weights excetera in this model weights and biases in this model.
+So that we get the fire, we want with the day that we know about.
+Awesome.
+Any questions on neural networks? All right.
+So, one of the big questions Venice, how, how do we represent numbers? Represent language as numbers? Right? Cuz it's a picture.
+I got pixels.
+This is grayscale.
+So even nicer every single Pixel is a member.
+So that's what I'm going to run through my neural network words.
+Well, let's talk about how we represent words.
+Do some basic terms for the next few slides, in facts about this the allowable structures in the language.
+Semantics of the meaning the meaning of what the what the sequence of words and code is important.
+It's a feature ization that uses a vector of word counts ignoring order.
+That is if I look in a sentence, I'm going to create a way to view that sentence like a bag of words, just jumbled up.
+I'm not going to care about the sequences of the world, which seems silly but it seems silly because I use this example a lot.
+I'm like, if you go to McDonald's and you're like talking to the nurse and they're like With cheeseburger, no, ketchup with ketchup.
+No cheese.
+Burger.
+Same words.
+A bag of words model is going to look at that as the same thing, but the semantics are wildly different.
+So that's a little anecdote to illustrate what might be lost with backwards.
+But bag of words is a very common.
+Way to Catherine will look at what it looks like.
+A gram is sequences.
+So this is actually two addresses backwards thing.
+So you looking at in the bag of Sequences.
+So I will look at what that looks like.
+So that means, I'll take, if you have a two or three bucks each other or the combination of three words, like there's a problem.
+So, how do we look at what is bag of words? Is every word in the language can have a ID? So if you were to put that in an array, let's say English is most have like 500 thousand words or something.
+Pregnant from wrong.
+Just being a real, 500,000 Elementary, not a real.
+Every number number two in a Terrain my top and be the work orange.
+So you can represent all of the words in the language of the Giant.
+Mapping of word to ID large.
+So when you do that, here's what it looks like.
+You'll have a sentence, the cat sat on the map right now that we have our 5000.
+Element Factor on every of those words has an ID in the vector or a location.
+You guys think of the index as an ID for this example, and then you just see a sequence of IDs.
+So, you can just map words, you can get a string of words and then just see a sequence of ideas when you use this.
+Dictionary base bag of words approach.
+So, this is how we bag of words in, so you can take.
+The sentence, right? And then in your vector, that is the size of 500,000.
+You have a vector to represent the sentence.
+So, the whole whatever sentence you have, you have a 500000 Factor? That has a count of.
+How many of that word appears? So if your first element is, duh? You'll have two of them, right? I meant cat.
+You have one cat 0001 that one on and then one more.
+So here you can you can represent that sentence or any sentence, or any string of tax would have 500,000 word Vector, 500,000 element Vector, where the position and Vector that corresponds to the word.
+Just has a count of how many words are present in your bag.
+Duffle bag of words.
+Feature ization.
+So you would just store it like every word idea.
+How many there are for the ones that have weird ideas, right? There's a lot of details, what I'm presenting here is the journey that gets us to How we do it today? Right? This is just some of the foundational pieces.
+You can have a bag of words, way of capturing the, a piece of text where you're just counting the occurrence of each word in that text, and you're representing it as a sparse Vector.
+In this case or as a Now with that, you can do the same with any grams, right? Because you don't like to lose the ordering.
+so, an engram is We're going to, instead of using each word has an ID, you can say each combination of word.
+Has an ID, right? So, the cat has one element.
+Has another element on the map, right? That's a two.
+so, you have a much bigger Factor because you're doing, then you have a unique ID for every Purple of words that come in a sequence of the combination.
+But whenever you see an engram with an being tour, ending 3 and you always see it like less than five.
+That's because of the complexity that comes when you have large end, you can represent it.
+This is what that representation means.
+Okay, so that bag of words, Backwards and engrams.
+Okay.
+Now you can do all kinds of cool stuff.
+You represent your sentence.
+You can actually do a combination as a representation because then that combination and codes a little bit more information.
+Right? Not only do you see what words are in there, but you can kind of see the two grams in there under three grand.
+I didn't you can actually have more complex, more beefy ways to represent that text until this is this is how you'll see whenever you see engrams or bag of words in literature.
+That's what they're talking about.
+It's a way of representing things.
+With those kinds of those kinds of representations, one gram backwards and I can see that I have 17 Fantasticks and one terrible in there the neural network and say all day and probably a very happy happy face.
+But if I see the opposite 17 Terrible's and one fantastic, then the morgue to use the encoding and a problem is if you say something like This is why you need to Gramps.
+If you say this is stupid Lisa and this is stupidly fantastic.
+Or you can say this is stupid, right? You might need that too because that's just one one.
+It'll say it's neutral, but it's actually one way or the other.
+So so that's so we're just talking about that topic.
+Taking words and representing it in a way that a model can understand it in the useful way.
+Yeah, okay, follow the power law of course, right? So that means that this can be much more common to grams and rare or two grams.
+You're going to see in a sentence.
+I don't know, like Bicycle.
+Newtonian physics, why you're not going to see that.
+So that's a tree that will never appear.
+Right? And there's actually way more three grams that will never appear in the language than there are three friends that will appear in the language.
+So luckily you don't have to store all of it is getting into those things.
+Right? And so I cut this short because honestly not, you know what it is.
+How many people feel like? They know what a bag of words in a engram is feel you.
+By the way, just count the occurrences of unique words, in your sentence and an engram, count the unique and combos of words in your sentence into a numerical representation that you can use in a model to train it.
+In a very basic.
+This is basic thing that we can actually do with deep learning.
+This is like where it started.
+And actually the first paper, you're going to read this right now because it's called one hot encoding.
+So instead of looking at it as integers.
+Just think of it as binary, right? So essentially You take the sentence and then you turn each word into their.
+Vector.
+And then you have a sequence of those factors.
+Right, man, bites, dog.
+Let's say this is your whole vocabulary, your whole language, not a very expressive language, but that's all the words in the language than that distance.
+Looks like this sequence.
+So you have three vectors a vector for each sentence and it's dog One Bites to man, The Third And it's not see a picture from the first paper.
+There's something called.
+This is an example of how it goes through a network.
+Okay, so we're going to talk about this.
+Not work later, but I'm just going to share an example in coding.
+Then you can take the sequence word, T-minus 1 TV in the word, you're on.
+Spell the word you're on, you can take two words before it into words after it.
+And you can run those as an input.
+It's a window of for right, well, window size to 2 before 2, after you take those words, these four words.
+Continuous bag of words, what it does is it predicts? What word should be in the middle of your sequence of words spring pool problem.
+There's so much to talk about this.
+Like, I can get off track.
+What? I'm just trying to show you, but what I'm trying to show you is.
+You're one hot and cold your words.
+Go in as those vectors would have one on which word it is.
+I'm done.
+You can train a neural, not not work to do something useful.
+So the word that comes out is going to be also add one hot encoding that encodes the predicted word.
+Right? So see if I was a problem of taking, those windows of the cat on floor and predicting.
+What's that? Middle word self esteem by works on.
+I'm so when those words go in.
+You've got some news on that, work learning that's going to Output the encoding for sat, right? Is that? Clear.
+All right.
+This is a cool model of the reason why I'm going to die because they decide I don't have to get a whole bunch of forwards and then label the right where to go in.
+In the middle.
+I can literally just say, take this structure and go read Wikipedia because I've got an incredible amount of sequence.
+Real language that in an unsupervised, way.
+I can just March along the the text.
+I need to just look at the words and saying all these are the two of them.
+That's the middle, and it's training itself to predict that, right.
+So that works in in length in language and it's actually incredibly powerful.
+Oh, yeah.
+Yeah, don't totally totally do supervised.
+Learning means.
+If I would do it, if I was going to take this model in training and supervised way.
+Imma have to prepare a dataset.
+I might have to go and create one and an established truth and I would have an expert would have to do that.
+So I'll supervise person would have to do that or would have to do that.
+I didn't give it to date.
+It's laborious right? Cuz Did the Bronx with those two? What? What it should predict as a little more crap, so and the prediction I'll put I'll just have to give it examples and if you have to manually do that, then it's supervised learning.
+But if you could just let a model, if you can configure a model in such a way that I can just go, look at unstructured data and learn on its own.
+They call them unsupervised, learning.
+So Yeah, yeah.
+So what did end up learning is in this particular case? And then I'll talk about Superman Spider-Man but in this particular case, what it's learning is.
+The ability to predict the output, the one hot and coding for the word that should be in the middle of those inputs.
+Right? So it sees this as the input in the wild, right? When you want to listen to Cheese's and put on, it's making a prediction as to what's the word that should be in the middle.
+And that means that when these numbers go in and just to be 1000, 11001 excetera when those numbers go in the way, the weights are configured and wavy activation function work in the weights here.
+It'll output 101 which is that, right.
+So we actually need to get this not work to have knowledge.
+We actually going to cost us of all these so that we get the thing that we want out here that there's right.
+I'm in getting it to do that.
+It doesn't do do it like crazy ways.
+Like that's where it's a learned model which is which is so cool.
+A lot of folks don't understand really why that works on how they don't understand the parameters of the limits to how much that can work.
+And it's not a deterministic thing that we can do.
+You write me measure? How well it works.
+That's my machine learning.
+So empirical it such an empirical science cuz somebody might change a rule.
+Do if someone said that they would know if it's better or worse, unless it's Friday.
+And that's a dozen very kind of beautiful thing about this discovery.
+But yeah, that's the explanation and soul.
+In the pixel landscape, let's think of the pixel.
+Example, supervised learning is I got to go get pictures of Batman and Superman and then I'm going to give it to the model.
+Right, and then I'll tell it that and then I expect the model to be able to see and recognize he will enter Batman.
+That's a supervisor training an unsupervised approach if you if one could be constructed, is I never given any data.
+I just set it up and I say go off into the world and learn, you know, into this world and learn what to run by my looks like a man.
+I'm indeed.
+I'm not aware of any image.
+Classification models that learn in an unsupervised way.
+I'm not familiar with it.
+No, actually I am but that would be don't get on supervised mean and I thought I was right now on unsupervised, way to train an image model, would be to say, go read all the web pages on the internet and I'm going to let you assume that the text around the images correspond to the images and I will get on supervised mean.
+So I don't have to go and prepare a dataset.
+I'm just going to let this model go and read the internet and then it should come back and say I can recognize a fats and dogs and planes, because I'm not the internet and I looked at the image and then I looked at the text around it and I built a representation of that, and now I'm good at that.
+So that would be a good example of an unsupervised.
+Shredded papers about it, like, check it out.
+Nobody know, but two, that's one.
+I'm here to talk about this because it's so it's so crazy.
+So this is one and this is our first day for it's worth of that and that's actually be paper that changed our world from a commercial standpoint where to buy for the first Juggernaut.
+That was like just the way we should be doing natural language processing.
+So we talk about ideas how to train these models in this way and I made a big splash but it turns out the hunting setup.
+The Stuck in the Middle, hear that you get after you train it on this problem and the being really useful for other things, right? I'm going to look at how you can translate the learning, the new problems and it's super smart and the new problem.
+We're going to look at it.
+You know, if you take King Midas Queen, you got Prince or something like you, do math on birds, like you could subtract will get there, but the knowledge in here, becomes really useful for a whole bunch of other things.
+And I don't feel we're going to talk about that.
+I'm not the symbol this a sibo formulation to get the knowledge in here.
+I'm going to cram knowledge in the middle by training it to solve this problem.
+You can set up other problems, other models, right? So you can say you know, what model, I want you to look at the sentence and then predict the next sentence.
+It's a different one and it's a different construction to Primm model into the knowledge into the model with a different problem.
+Solving.
+It's using the same day to sight in a different way.
+I'm in Maine create more knowledge or less knowledge.
+21 is I'm going to take a model like this and I want to take sentences of randomly randomize a word.
+I'm going to randomly replace a word in the sentence.
+And I'm going to train this model to predict which word was randomly changed.
+That was the Burt Innovation.
+That was one of them birthday to things that didn't add up the masking, which is I'm going to randomly change the word and I'm going to let you predict what it is.
+I'd like the problem.
+Prim's knowledge in here in a few.
+Crazy.
+You'll see it will look at it deeply and then it's another picture of the same stuff.
+You've got that one hot and coating.
+Of course, this in the simplified cases like 500.
+500 100.
+Then there's only one one in.
+It is crazy.
+I know you train it so that you get the fat as the output.
+And then this hidden Lair, is what this is, your embeddings.
+Which is what creates these this representation for other stuff.
+That's not how this stuff works for the drawbacks to 100.
+This, this particular way of representing language, one hot and coding does drawbacks input backers are large island is out of vocabulary.
+So if there's like a new word like LMFAO or whatever, right? And you see it in your texts, you may not have a thin coating for you.
+Can't really utilize it and see what they do is they just inject unknown.
+For where is it doesn't see? And then it has an incoming phone on.
+This is a little weird but not the drawback in the knowledge, that one hot and coding can get Right under the Regatta.
+This is actually really important.
+There's no relationship.
+Like like there's no relationship between the word and the number.
+The number is just in your array, whichever one of those bits are hot, right? Or 1.
+I know you know, you might have a 1 At the first number that and that could be like cat.
+And then as to never give your refrigerator and there's like, no relationship between the encoding.

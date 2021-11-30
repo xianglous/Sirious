@@ -113,7 +113,7 @@ def main():
 
     s = trans_json2str('transcripts/output, with punc.json')
     ic(len(s.split()))
-    fnm = 'transcripts/eecs498_lec03, cleaned.txt'
+    fnm = 'transcripts/eecs498_lec03.txt'
     open(fnm, 'a').close()  # Create file in OS
     with open(fnm, 'w') as f:
         f.write(s)
