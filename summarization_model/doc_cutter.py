@@ -110,17 +110,34 @@ class DocCutter:
                 # ic(sim_scores, idx)
                 return split(chunk[:idx]), split(chunk[idx:])
 
-        return split(list(range(len(sents))))
+        idxs = split(list(range(len(sents))))  # Essentially a binary tree
+        return
 
 
 if __name__ == '__main__':
-    from icecream import ic
+    # from icecream import ic
+    #
+    # dc = DocCutter()
+    # t = get_ted_eg('Cuddy')['transcript']
+    # t = ' '.join(tokenize.sent_tokenize(t)[:15])  # Get a smaller sample
+    # # t = get_498_eg()
+    # # ic(t[:400])
+    # ic(tokenize.sent_tokenize(t))
+    # ic(dc(t, max_sz=128))
 
-    dc = DocCutter()
-    t = get_ted_eg('Cuddy')['transcript']
-    t = ' '.join(tokenize.sent_tokenize(t)[:15])  # Get a smaller sample
-    # t = get_498_eg()
-    # ic(t[:400])
-    ic(tokenize.sent_tokenize(t))
-    ic(dc(t, max_sz=128))
+    ids_ = ([0], ((([1, 2, 3, 4, 5, 6, 7], [8, 9]), [10]), [11, 12, 13, 14]))
+
+    def expand(idxs):
+        lst = []
+
+        def _expand(idxs_):
+            if isinstance(idxs_, list):
+                lst.append(idxs_)
+            else:
+                l, r = idxs_
+                _expand(l)
+                _expand(r)
+        _expand(idxs)
+        return lst
+    ic(expand(ids_))
 
