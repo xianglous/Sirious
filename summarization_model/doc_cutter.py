@@ -34,9 +34,16 @@ class DocCutter:
                 if isinstance(x, str):
                     return len(ids)
                 else:  # list[str]
-                    return sum(len(e) for e in tokenizer(ids))
+                    # ic(ids)
+                    # ic(tokenizer(ids))
+                    return [len(e) for e in ids]
             n_counter = counter
         sents = tokenize.sent_tokenize(txt)
+        # ic(sents)
+        # len_sents = [n_counter(sent) for sent in sents]
+        len_sents = n_counter(sents)
+        # ic(len_sents)
+        # exit(1)
         model = self.d_models[method]
         vec_sents = np.vstack([model.encode(sent) for sent in sents])
         n = len(sents)
@@ -77,7 +84,7 @@ class DocCutter:
                 return sims.mean()
 
             np.testing.assert_array_equal(np.array(chunk), np.arange(chunk[0], chunk[-1]+1))
-            if sum(n_counter(sents[idx]) for idx in chunk) <= max_sz:
+            if sum(len_sents[idx] for idx in chunk) <= max_sz:
                 return chunk
             elif len(chunk) == 1:
                 warn(f'Sentence #{chunk[0]} has more than {max_sz} - returned as a single sentence')
@@ -130,6 +137,7 @@ if __name__ == '__main__':
     # ic(t[:400])
     # ic(dc(t))
 
-    t = get_ui_eg(2)
+    # t = get_ui_eg(2)
+    t = get_txt(os.path.join('data-eg', 'blackhole-explained.txt'))
     # ic(t)
     ic(dc(t))
