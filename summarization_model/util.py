@@ -1,3 +1,4 @@
+import os
 import re
 import json
 from typing import Union
@@ -72,6 +73,12 @@ def get_ted_eg(k='Do schools kill creativity', clean=True):
     )
 
 
+def get_txt(fp):
+    with open(fp, 'r') as f:
+        lns = list(map(str.strip, f.readlines()))
+        return ' '.join(lns)
+
+
 def get_498_eg(section=False):
     d = '../Transcription/transcripts'
     fnm = 'eecs498_lec03'
@@ -82,9 +89,16 @@ def get_498_eg(section=False):
     return ' '.join(lns)
 
 
+def get_ui_eg(k=1):
+    return get_txt(os.path.join('..', 'UI', 'lectures', f'Lecture_{k}.txt'))
+
+
 if __name__ == '__main__':
     # ic(get_ted_eg())
-    print(get_ted_eg('Cuddy')['transcript'])
+    # print(get_ted_eg('Cuddy')['transcript'])
+    #
+    # txt = get_498_eg()
+    # ic(len(txt.split()))
 
-    txt = get_498_eg()
-    ic(len(txt.split()))
+    # ic(get_ui_eg(2))
+    ic(get_txt(os.path.join('data-eg', 'blackhole-explained.txt')))
