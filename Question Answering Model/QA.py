@@ -136,13 +136,13 @@ def qa_bot(model_name):
         lecture = input('Which lecture do you want to ask about?\n>')
         if lecture == 'exit':
             break
-        while not os.path.isfile(f'context/Lecture_{lecture}_allen_resolved.txt'):
+        while not os.path.isfile(f'context/Lecture_{lecture}.txt'):
             lecture = input('Please enter a valid lecture number.\n>')
             if lecture == 'exit':
                 break
         if lecture == 'exit':
             break
-        with open(f'context/Lecture_{lecture}_allen_resolved.txt', 'r', encoding="utf-8") as f:
+        with open(f'context/Lecture_{lecture}.txt', 'r', encoding="utf-8") as f:
             context = f.read()
 
         question = input("What question do you have?\n>")

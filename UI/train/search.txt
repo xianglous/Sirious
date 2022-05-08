@@ -1,0 +1,5 @@
+Question: which lecture did the concept of derivatives appear? Query: derivatives
+Question: which lecture was about bucharest? Query: bucharest
+Question: which lecture mentioned the neural network? Query: the neural network
+Question: which lecture did football appear? Query: football
+Question: which lecture talks about gpt-3? Query: gpt-3

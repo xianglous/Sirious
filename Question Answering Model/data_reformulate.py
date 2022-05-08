@@ -54,4 +54,4 @@ def get_data(file_path):
     return contexts, questions, answers
 
 contexts, questions, answers = get_data("TutorialVQAData-master/train.json")
-#print(contexts[0], questions[0], answers[0])
+print(contexts[0], questions[0], answers[0])

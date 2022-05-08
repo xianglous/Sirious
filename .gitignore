@@ -151,3 +151,5 @@ cert/
 
 # Google Cloud
 service-account-key.json
+
+*_checkpoint

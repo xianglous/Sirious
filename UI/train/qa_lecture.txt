@@ -1,0 +1,8 @@
+Input: i remember lecture 5 talked about neural network, what is it? Question: what is neural network?
+Input: where is Berlin in lecture 10? Question: where is Berlin?
+Input: what is a neural network? Question: what is a neural network?
+Input: in lecture 11, where is the capital of China? Question: where is the capital of China?
+Input: lecture 6 mentioned integration, how can we do it? Question: how can we do integration?
+Input: who is the best player in basketball? Question: who is the best player in basketball?
+Input: who is the best dancer in the world? Question: who is the best dancer in the world?
+Input: i can't remember the definition of transformers in lecture 1, can you repeat it? Question: can you repeat the definition of transformers?

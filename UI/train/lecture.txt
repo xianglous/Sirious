@@ -1,0 +1,14 @@
+Query: please summarize lecture 5. Lecture: 5
+Query: please summarize lecture 3. Lecture: 3
+Query: can you summarize lecture 10? Lecture: 10
+Query: could you please summarize lecture 1? Lecture: 1
+Query: summarize lecture 6. Lecture: 6
+Query: what is lecture 4 about? Lecture: 4
+Query: what is lecture for about? Lecture: 4
+Query: what is lecture four about? Lecture: 4
+Query: where is Berlin? Lecture: -1
+Query: i remember lecture 5 talked about neural network, what is it? Lecture: 5
+Query: where is Berlin in lecture 10? Lecture: 10
+Query: what is a neural network? Lecture: -1
+Query: what is lecture five about? Lecture: 5
+Query: i remember lecture for talked about neural network, what is it? Lecture: 4

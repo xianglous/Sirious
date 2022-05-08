@@ -1,0 +1,21 @@
+Question: can you write a summary for lecture 1? Label: 1
+Question: which lecture talks about the moon? Label: 2
+Question: summarize lecture 8. Label: 1
+Question: what is a neutron? Label: 0
+Question: how to play basketball? Label: 0
+Question: which lecture did the concept of derivatives appear? Label: 2
+Question: what did lecture 7 talk about? Label: 1
+Question: where is New York? Label: 0
+Question: which lecture is about thermodynamics? Label: 2
+Question: what is the capital of germany? Label: 0
+Question: which lecture is about germany? Label: 2
+Question: which lecture is about neural network? Label: 2
+Question: what is a transformer? Label: 0
+Question: summarize lecture 5. Label: 1
+Question: please summarize lecture 11. Label: 1
+Question: which lecture did the neural network appear? Label: 2
+Question: which lecture talks about London? Label: 2
+Question: in lecture 7, who should you be talking to? Label: 0
+Question: when should we talk about politics in lecture 11? Label: 0
+Question: what did lecture 8 talk about? Label: 2
+Question: can you tell me what lecture 5 is about? Label:1
