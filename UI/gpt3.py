@@ -5,8 +5,8 @@ from doc_cutter import DocCutter
 
 ROOT_PATH = Path('lectures')
 
-openai.organization = 'org-aTR918ugvnF70WZyCHyxsHql'
-openai.api_key = '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'
+openai.organization =  # your openai organization
+openai.api_key = # your api key
 
 # print(dir(openai))
 
